@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en" ⚡="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog Post - How I uncovered key product flaws with metrics | CheersElliot</title>
+    <link rel="canonical" href="http://www.cheerselliot.com/blog-posts/uncovering-key-product-flaws-through-metrics"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Here's an overview of how we revamped our product metrics to be more aligned with users feelings, leading our team to a swathe of new product discoveries and improvements." />
+    <meta name="amp-google-client-id-api" content="googleanalytics">
+    <link rel="shortcut icon" type="image/png" href="../favicon.png">
+    
+    <meta property="og:title" content="How I uncovered key product flaws with metrics" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.cheerselliot.com/blog-posts/uncovering-key-product-flaws-through-metrics" />
+    <meta property="og:image" content="XX" />
+    <meta property="og:description" content="Here's an overview of how we revamped our product metrics to be more aligned with users feelings, leading our team to a swathe of new product discoveries and improvements." />
+      
+  <script async="" src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
+  <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+
+  <style amp-boilerplate="">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate="">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+
+<style amp-custom="">/*! Bassplate | MIT License | http://github.com/basscss/bassplate */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}p{font-weight:400}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}.h00{font-size:6.875rem}.h0{font-size:5rem}.h1{font-size:4.0625rem}.h2{font-size:3.125rem}.h3{font-size:2.1875rem}.h4{font-size:1.375rem}.h5{font-size:1.125rem}.h6{font-size:.875rem}.font-family-inherit{font-family:inherit}.font-size-inherit{font-size:inherit}.text-decoration-none{text-decoration:none}.bold{font-weight:700}.italic{font-style:italic}.caps{text-transform:uppercase;letter-spacing:.2em}.left-align{text-align:left}.center{text-align:center}.right-align{text-align:right}.justify{text-align:justify}.nowrap{white-space:nowrap}.break-word{word-wrap:break-word}.list-style-none{list-style:none}.underline{text-decoration:underline}.truncate{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.list-reset{list-style:none;padding-left:0}.inline{display:inline}.block{display:block}.inline-block{display:inline-block}.table{display:table}.table-cell{display:table-cell}.overflow-hidden{overflow:hidden}.overflow-scroll{overflow:scroll}.overflow-auto{overflow:auto}.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix:after{clear:both}.left{float:left}.right{float:right}.fit{max-width:100%}.max-width-1{max-width:24rem}.max-width-2{max-width:32rem}.max-width-3{max-width:48rem}.max-width-4{max-width:64rem}.border-box{box-sizing:border-box}.align-baseline{vertical-align:baseline}.align-top{vertical-align:top}.align-middle{vertical-align:middle}.align-bottom{vertical-align:bottom}.m0{margin:0}.mt0{margin-top:0}.mr0{margin-right:0}.mb0{margin-bottom:0}.ml0,.mx0{margin-left:0}.mx0{margin-right:0}.my0{margin-top:0;margin-bottom:0}.m1{margin:.5rem}.mt1{margin-top:.5rem}.mr1{margin-right:.5rem}.mb1{margin-bottom:.5rem}.ml1,.mx1{margin-left:.5rem}.mx1{margin-right:.5rem}.my1{margin-top:.5rem;margin-bottom:.5rem}.m2{margin:1rem}.mt2{margin-top:1rem}.mr2{margin-right:1rem}.mb2{margin-bottom:1rem}.ml2,.mx2{margin-left:1rem}.mx2{margin-right:1rem}.my2{margin-top:1rem;margin-bottom:1rem}.m3{margin:1.5rem}.mt3{margin-top:1.5rem}.mr3{margin-right:1.5rem}.mb3{margin-bottom:1.5rem}.ml3,.mx3{margin-left:1.5rem}.mx3{margin-right:1.5rem}.my3{margin-top:1.5rem;margin-bottom:1.5rem}.m4{margin:2rem}.mt4{margin-top:2rem}.mr4{margin-right:2rem}.mb4{margin-bottom:2rem}.ml4,.mx4{margin-left:2rem}.mx4{margin-right:2rem}.my4{margin-top:2rem;margin-bottom:2rem}.mxn1{margin-left:calc(.5rem * -1);margin-right:calc(.5rem * -1)}.mxn2{margin-left:calc(1rem * -1);margin-right:calc(1rem * -1)}.mxn3{margin-left:calc(1.5rem * -1);margin-right:calc(1.5rem * -1)}.mxn4{margin-left:calc(2rem * -1);margin-right:calc(2rem * -1)}.m-auto{margin:auto}.mt-auto{margin-top:auto}.mr-auto{margin-right:auto}.mb-auto{margin-bottom:auto}.ml-auto,.mx-auto{margin-left:auto}.mx-auto{margin-right:auto}.my-auto{margin-top:auto;margin-bottom:auto}.col{float:left}.col,.col-3{width:25%}.col-6{width:50%}.col-10{width:83.33333%}.col-12{width:100%}@media (min-width:52.06rem){.md-col{float:left;box-sizing:border-box}.md-col-right{float:right;box-sizing:border-box}.md-col-1{width:8.33333%}.md-col-2{width:16.66667%}.md-col-3{width:25%}.md-col-4{width:33.33333%}.md-col-5{width:41.66667%}.md-col-6{width:50%}.md-col-7{width:58.33333%}.md-col-8{width:66.66667%}.md-col-9{width:75%}.md-col-10{width:83.33333%}.md-col-11{width:91.66667%}.md-col-12{width:100%}}.flex{display:-ms-flexbox;display:flex}@media (min-width:52.06rem){.md-flex{display:-ms-flexbox;display:flex}}@media (min-width:64.06rem){.lg-flex{display:-ms-flexbox;display:flex}}.flex-column{-ms-flex-direction:column;flex-direction:column}.flex-wrap{-ms-flex-wrap:wrap;flex-wrap:wrap}.items-start{-ms-flex-align:start;align-items:flex-start}.items-end{-ms-flex-align:end;align-items:flex-end}.items-center{-ms-flex-align:center;align-items:center}.items-baseline{-ms-flex-align:baseline;align-items:baseline}.items-stretch{-ms-flex-align:stretch;align-items:stretch}.self-start{-ms-flex-item-align:start;align-self:flex-start}.self-end{-ms-flex-item-align:end;align-self:flex-end}.self-center{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}.self-baseline{-ms-flex-item-align:baseline;align-self:baseline}.self-stretch{-ms-flex-item-align:stretch;-ms-grid-row-align:stretch;align-self:stretch}.justify-start{-ms-flex-pack:start;justify-content:flex-start}.justify-end{-ms-flex-pack:end;justify-content:flex-end}.justify-center{-ms-flex-pack:center;justify-content:center}.justify-between{-ms-flex-pack:justify;justify-content:space-between}.justify-around{-ms-flex-pack:distribute;justify-content:space-around}.justify-evenly{-ms-flex-pack:space-evenly;justify-content:space-evenly}.content-start{-ms-flex-line-pack:start;align-content:flex-start}.content-end{-ms-flex-line-pack:end;align-content:flex-end}.content-center{-ms-flex-line-pack:center;align-content:center}.content-between{-ms-flex-line-pack:justify;align-content:space-between}.content-around{-ms-flex-line-pack:distribute;align-content:space-around}.content-stretch{-ms-flex-line-pack:stretch;align-content:stretch}.flex-auto{-ms-flex:1 1 auto;flex:1 1 auto;min-width:0;min-height:0}.flex-none{-ms-flex:none;flex:none}.order-0{-ms-flex-order:0;order:0}.order-1{-ms-flex-order:1;order:1}.order-2{-ms-flex-order:2;order:2}.order-3{-ms-flex-order:3;order:3}.order-last{-ms-flex-order:99999;order:99999}.relative{position:relative}.absolute{position:absolute}.fixed{position:fixed}.top-0{top:0}.right-0{right:0}.bottom-0{bottom:0}.left-0{left:0}.z1{z-index:1}.z2{z-index:2}.z3{z-index:3}.z4{z-index:4}.border{border-style:solid;border-width:1px}.border-top{border-top-style:solid;border-top-width:1px}.border-right{border-right-style:solid;border-right-width:1px}.border-bottom{border-bottom-style:solid;border-bottom-width:1px}.border-left{border-left-style:solid;border-left-width:1px}.border-none{border:0}.rounded{border-radius:3px}.circle{border-radius:50%}.rounded-top{border-radius:3px 3px 0 0}.rounded-right{border-radius:0 3px 3px 0}.rounded-bottom{border-radius:0 0 3px 3px}.rounded-left{border-radius:3px 0 0 3px}.not-rounded{border-radius:0}.hide{position:absolute;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}@media (max-width:40rem){.xs-hide{display:none}}@media (min-width:40.06rem) and (max-width:52rem){.sm-hide{display:none}}@media (min-width:64.06rem){.lg-hide{display:none}}.display-none{display:none}*{box-sizing:border-box}body{background:#fff;color:#4a4a4a;font-family:Lato,-apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Arial,sans-serif;min-width:315px;overflow-x:hidden;font-smooth:always;-webkit-font-smoothing:antialiased}main{max-width:100%;margin:0 auto}p{padding:0;margin:0}.ampstart-accent{color:#003f93}#content:target{margin-top:calc(0px - 4.375rem);padding-top:4.375rem}.ampstart-title-lg{font-size:4.0625rem;line-height:3.5rem;letter-spacing:.06rem}.ampstart-title-md{font-size:3.125rem;line-height:3;letter-spacing:.06rem}.ampstart-title-sm{font-size:2.1875rem;line-height:2;letter-spacing:.06rem}.ampstart-subtitle,body{line-height:1.75;letter-spacing:normal}.ampstart-subtitle{color:#003f93;font-size:1rem}.ampstart-byline,.ampstart-caption,.ampstart-hint,.ampstart-label{font-size:1.125rem;color:#4f4f4f;line-height:1.5;letter-spacing:.06rem}.ampstart-label{text-transform:uppercase}.ampstart-footer,.ampstart-small-text{font-size:.875rem;line-height:1;letter-spacing:.06rem}.ampstart-card{box-shadow:0 1px 1px 0 rgba(0,0,0,.14),0 1px 1px -1px rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12)}.h1,h1{font-size:1.6rem;line-height:3.5rem}.h2,h2{font-size:3.125rem;line-height:3}.h3,h3{font-size:1.6rem;line-height:2}.h4,h4{font-size:1.375rem;line-height:1.75}.h5,h5{font-size:1.125rem;line-height:1.5}.h6,h6{font-size:.875rem;line-height:1}h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-weight:700;letter-spacing:.06rem}a,a:active,a:visited{color:inherit}.ampstart-btn{font-family:inherit;font-weight:inherit;font-size:1rem;line-height:1.5;padding:.7em .8em;text-decoration:none;white-space:nowrap;word-wrap:normal;vertical-align:middle;cursor:pointer;background-color:#000;color:#202125;border:1px solid #202125}.white{color:#fff}.ampstart-btn:visited{color:#202125}.ampstart-btn-secondary{background-color:#fff;color:#202125;border:1px solid #202125}.ampstart-btn-secondary:visited{color:#202125}.ampstart-btn:active .ampstart-btn:focus{opacity:.8}.ampstart-btn[disabled],.ampstart-btn[disabled]:active,.ampstart-btn[disabled]:focus,.ampstart-btn[disabled]:hover{opacity:.5;outline:0;cursor:default}.h7{font-size:.75rem}@media (min-width:40.06rem){.sm-m0{margin:0}.h3,h3{font-size:2.1625rem}}@media (min-width:52.06rem){.md-h2{font-size:3.125rem}}.ampstart-headerbar{background-color:#fff;color:#000;z-index:999;box-shadow:0 0 5px 2px rgba(0,0,0,.1)}.ampstart-headerbar+:not(amp-sidebar),.ampstart-headerbar+amp-sidebar+*{margin-top:4.375rem}.ampstart-headerbar-nav .ampstart-nav-item{padding:0 1rem;background:0 0;opacity:.8}.ampstart-headerbar-nav{line-height:4.375rem}.ampstart-nav-item:active,.ampstart-nav-item:focus,.ampstart-nav-item:hover{opacity:1}.ampstart-navbar-trigger:focus{outline:0}.ampstart-nav a,.ampstart-navbar-trigger,.ampstart-sidebar-faq a{cursor:pointer;text-decoration:none}.ampstart-nav .ampstart-label{color:inherit}.ampstart-navbar-trigger{line-height:4.375rem;font-size:3.125rem}.ampstart-headerbar-nav{-ms-flex:1;flex:1}.ampstart-nav-search{-ms-flex-positive:.5;flex-grow:.5}.ampstart-headerbar .ampstart-nav-search:active,.ampstart-headerbar .ampstart-nav-search:focus,.ampstart-headerbar .ampstart-nav-search:hover{box-shadow:none}.ampstart-nav-search>input{border:none;border-radius:3px;line-height:normal}.ampstart-sidebar{background-color:#fff;color:#000;min-width:300px;width:300px}.ampstart-sidebar .ampstart-icon{fill:#003f93}.ampstart-sidebar-header{line-height:4.375rem;min-height:4.375rem}.ampstart-sidebar .ampstart-dropdown header,.ampstart-sidebar .ampstart-dropdown-item,.ampstart-sidebar .ampstart-faq-item,.ampstart-sidebar .ampstart-nav-item,.ampstart-sidebar .ampstart-social-follow{margin:0 0 2rem}.ampstart-sidebar .ampstart-nav-dropdown{margin:0}.ampstart-sidebar .ampstart-navbar-trigger{line-height:inherit}.ampstart-navbar-trigger svg{pointer-events:none}.ampstart-btn{min-width:14em;padding:1.2em 1.6em;letter-spacing:.26em;font-weight:700;-webkit-backface-visibility:hidden;backface-visibility:hidden}.ampstart-btn,.ampstart-btn:active,.ampstart-btn:focus,.ampstart-btn:hover,.ampstart-btn:visited{border-color:inherit;color:inherit}.ampstart-btn:before{position:absolute;left:0;top:0;bottom:0;right:0;z-index:1;background-color:#202125;opacity:0;transition:opacity .3s;content:""}.ampstart-btn:focus:before,.ampstart-btn:hover:before{opacity:1;transition-delay:.3s}.ampstart-btn>span{animation:c .3s forwards cubic-bezier(.75,0,.125,1)}.ampstart-btn:focus>span,.ampstart-btn:hover>span{animation:b .3s both cubic-bezier(.75,0,.125,1);color:#fff}.ampstart-btn:after{position:absolute;left:-50%;top:-50%;z-index:2;width:200%;height:200%;background-color:#202125;transform:translate3d(0,-100%,0) rotate(-10deg);content:""}.ampstart-btn:focus:after,.ampstart-btn:hover:after{animation:a .3s forwards ease-in}@keyframes a{50%{transform:translate3d(0,-50%,0) rotate(-10deg);animation-timing-function:ease-out}to{transform:none}}@keyframes b{0%{transform:translateY(-3rem)}to{transform:none}}@keyframes c{0%{transform:translateY(3rem)}to{transform:none}}.lune-theme-light.ampstart-btn{background-color:#fff;color:#202125}.lune-theme-light.ampstart-btn:after,.lune-theme-light.ampstart-btn:before{background-color:#202125}.lune-theme-light.ampstart-btn:focus>span,.lune-theme-light.ampstart-btn:hover>span{color:#fff}.lune-transparent.ampstart-btn{background-color:transparent}.ampstart-headerbar{-ms-flex-pack:justify;justify-content:space-between;box-shadow:none;will-change:transform;height:4.375rem;padding:0 1rem}.ampstart-headerbar-title{font-size:1.375rem;font-weight:900;letter-spacing:.48em;line-height:1;text-indent:.48em}.ampstart-navbar-trigger{padding-left:.5rem;font-size:1.375rem;line-height:1}.ampstart-headerbar .ampstart-navbar-trigger path{transition:transform .25s ease-out}.ampstart-headerbar .ampstart-navbar-trigger:focus path:first-of-type,.ampstart-headerbar .ampstart-navbar-trigger:hover path:first-of-type{transform:translateY(-1px)}.ampstart-headerbar .ampstart-navbar-trigger:focus path:last-of-type,.ampstart-headerbar .ampstart-navbar-trigger:hover path:last-of-type{transform:translateY(1px)}.ampstart-headerbar-fixed{-ms-flex-pack:end;justify-content:flex-end}.ampstart-headerbar-fixed-link{letter-spacing:.26em;line-height:3}.lune-noir .ampstart-headerbar{background:#202125;color:#fff}@media (min-width:45rem){.ampstart-navbar-trigger{padding-left:1.5rem}.ampstart-headerbar{height:5.75rem}.ampstart-headerbar+:not(amp-sidebar),.ampstart-headerbar+amp-sidebar+*{margin-top:5.75rem}.ampstart-headerbar-nav{line-height:5.75rem}.ampstart-sidebar-header{line-height:5.75rem;min-height:5.75rem}}.ampstart-sidebar{width:80vw;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-align:center;align-items:center}.ampstart-sidebar-header{position:absolute;top:0;left:1.5rem;height:4.375rem}@media (min-width:45rem){.ampstart-sidebar-header{height:5.75rem}}.ampstart-sidebar-nav{width:100%;margin:auto}.ampstart-navbar-trigger{padding:1.5rem;transition:transform .25s ease-out}.ampstart-sidebar .ampstart-navbar-trigger{line-height:1}.ampstart-sidebar .ampstart-navbar-trigger:focus,.ampstart-sidebar .ampstart-navbar-trigger:hover{transform:rotate(180deg);transition-timing-function:ease-in}.ampstart-navbar-trigger:focus svg,.ampstart-sidebar .ampstart-navbar-trigger:focus{background-color:#f9f9f9}.ampstart-sidebar .ampstart-nav-item{max-width:7.5em;margin:auto;font-weight:900;line-height:3;color:#202125}.ampstart-sidebar .lune-nav-contact{max-width:10.625rem;letter-spacing:.26em}.ampstart-nav-link{position:relative;display:-ms-flexbox;display:flex}.ampstart-nav-link>span{margin:auto}.ampstart-nav-link>span:first-child{margin-left:0}.ampstart-nav-link>span:last-child{margin-right:0}.ampstart-sidebar .lune-nav-contact .ampstart-nav-link{display:inline-block;text-transform:lowercase}@keyframes d{0%,2%{transform-origin:center top;transform:scaleY(0) translate3d(0,-20px,0)}2.5%{transform:scaleY(.5) translateZ(0)}5%{transform-origin:center top;transform:scaleX(1)}5.1%{transform-origin:center bottom}75%{transform:scaleX(1)}78%,80%{transform:scaleY(0)}99.9%{transform-origin:center bottom}to{transform-origin:center top;transform:scaleY(0)}}@keyframes e{0%{opacity:0;transform:translate3d(0,-20px,0)}5%{opacity:0;transform:translate3d(0,-20px,0)}78%,9%{opacity:1;transform:translateZ(0)}81%,to{opacity:0;transform:translate3d(0,20px,0)}}.lune-line-after:after{display:inline-block;-ms-flex-positive:1;flex-grow:1;height:2px;margin-left:.75rem;background:currentColor;content:""}.lune-underline-strike:before{position:absolute;bottom:calc(.5em - 8px);left:0;right:0;height:.1em;min-height:2px;content:"";background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}.lune-underline-strike:focus:before,.lune-underline-strike:hover:before{transform:none}@keyframes f{0%{transform:scale(0);opacity:1}50%{transform:scale(1);opacity:1}50.1%{opacity:0}to{opacity:0}}@keyframes g{0%{opacity:1}50%{opacity:1}50.1%{opacity:0}to{opacity:0}}.lune-theme-dark{background-color:#202125;color:#fff}.lune-theme-light{background-color:#fff;color:#202125}.lune-anim-scale-up{animation:h 2s .4s ease-out both}.lune-anim-move-up{animation:i .8s .4s cubic-bezier(.41,.01,.27,1) both}@keyframes h{0%{opacity:0;transform:scale(.9)}50%{opacity:1}to{transform:none}}@keyframes i{0%{opacity:0;transform:translateY(3.125rem)}to{opacity:1;transform:none}}.lune-page-landing .ampstart-btn{animation-delay:calc(.4s + 3 * .1s)}.lune-page-landing{height:100vh;overflow-x:hidden;overflow-y:scroll;-webkit-overflow-scrolling:touch}.lune-page-landing .ampstart-btn{pointer-events:all}.lune-page-landing .ampstart-btn{min-width:16rem}.lune-hero-content{margin-top:-4.375rem;min-height:390px}.lune-hero-image-wrapper{width:100vmin;min-width:15rem;max-width:60vh}.lune-hero-image{margin-top:-6.5em;max-width:21.125rem}.lighten{opacity:.4}@media (min-width:52.06rem){.lune-hero-content{-ms-flex-pack:start;justify-content:flex-start;margin-top:0}.lune-page-product .lune-hero-image-wrapper{position:fixed;top:calc(5.75rem + (238px / 2));left:50%;will-change:transform;transform:translateX(-50%)}.lune-hero-image{margin-top:0}}.lune-overlay{color:#202125}.lune-overlay-close{top:4.375rem;width:40px;height:40px;border-radius:50%;font-size:1.375rem;min-width:0;font-weight:100;letter-spacing:0;font-size:.875rem;padding:0}@media (min-width:45rem){.lune-overlay-close{top:5.75rem}}.lune-overlay-hero{height:calc(100vh - (4.375rem))}.lune-overlay-hero:after{position:absolute;bottom:0;width:100vw;height:1rem;background:#fff;content:""}.lune-overlay-hero-image{top:50%;max-width:1035px;transform:translateY(-50%);background:#fcefef}.lune-overlay-poly .lune-overlay-hero-image{max-width:1633px;background:#f9f9f9}.lune-overlay-hero-title{letter-spacing:.48em;text-indent:calc(.48em / 2);font-weight:900;line-height:1.75;color:#202125;animation-delay:calc(.4s + .1s)}.lune-overlay .ampstart-btn{animation-delay:calc(.4s + 3 * .1s)}@media (min-width:45rem){.lune-overlay-hero{height:76vw;max-height:calc(100vh - 5.75rem);background:#fcefef}.lune-overlay-poly .lune-overlay-hero{height:61vw;background:#f9f9f9}.lune-overlay-hero:after{content:none}}@media (min-width:64.06rem){.lune-overlay-hero-image{right:auto;left:0}.lune-overlay-poly .lune-overlay-hero-image{right:0;left:auto}}.lune-overlay-content{margin-top:50px}.lune-overlay-copy-title{line-height:1.75;font-weight:900;letter-spacing:.26em;word-wrap:break-word;color:#202125;margin-top:-30%}.lune-overlay-copy-subtitle{font-weight:900}@media (min-width:45rem){.lune-overlay-copy-title{margin-top:-10%}}@media (min-width:52.06rem){.lune-overlay-content{-ms-flex-flow:row;flex-flow:row}.lune-overlay-content:nth-child(2n){-ms-flex-flow:row-reverse;flex-flow:row-reverse}.lune-overlay-copy{-ms-flex-positive:1;flex-grow:1}.lune-overlay-copy-title{width:166.66667%;margin-top:0}.lune-overlay-content-image{transform:translateX(-8.33333%)}}.lightbox{background:rgba(0,0,0,.85);width:100%;height:100%;position:absolute;display:flex;align-items:center;justify-content:center;text-align:center}.lightbox h1{color:#fff}.modal{color:#fff;font-size:1em}.modal * div{width:100%}@media (min-width:45rem){.modal{font-size:2em}}.content{flex-direction:column}.container{flex-direction:column;width:80%}.col-blog{width:100%}.master{display:flex;justify-content:center}.blog-img{align-self:center}.embed{padding:20px;display:block;margin:auto}@media (min-width:60rem){.content{flex-direction:row}#right-image{flex-direction:row-reverse}}.signature{font-weight:900;line-height:1.5;letter-spacing:.2em}
+</style>
+</head>
+<body class="lune lune-overlay-poly">
+  <!-- Configure analytics -->
+    <amp-analytics type="googleanalytics" >
+        <script type="application/json">
+            {
+                "vars": {
+                    "account": "UA-140722528-1"
+                },
+                "triggers": {
+                    "trackPageview": {
+                        "on": "visible",
+                        "request": "pageview",
+                        "vars": {
+                            "eventCategory": "content",
+                            "eventAction": "view",
+                            "eventLabel": "blog-post"
+                        }
+                    },
+                    "click on #contact trigger": {
+                        "on": "click",
+                        "selector": "#cta-contact",
+                        "request": "event",
+                        "vars": {
+                            "eventCategory": "CTAs",
+                            "eventAction": "clicked",
+                            "eventLabel": "contact"
+                        }
+                    },
+                    "scrollPings": {
+                        "on": "scroll",
+                        "scrollSpec": {
+                            "verticalBoundaries": [70]
+                        },
+                        "request": "event",
+                        "vars": {
+                            "eventCategory": "engagement",
+                            "eventAction": "scroll",
+                            "eventLabel": "70-percent"
+                        }
+                    },
+                    "pageTimer": {
+                        "on": "timer",
+                        "timerSpec": {
+                            "interval": 10,
+                            "maxTimerLength": 600
+                        },
+                        "request": "event",
+                        "vars": {
+                            "eventCategory": "engagement",
+                            "eventAction": "timer",
+                            "eventLabel": "10-seconds"
+                        }
+                    }
+                }
+            }
+        </script>
+    </amp-analytics>
+  <!-- Start Navbar -->
+  <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
+    <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 col-3 ">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
+        <path fill="currentColor" d="M9 12h18v2H9z"></path>
+        <path fill="currentColor" d="M9 17h18v2H9z"></path>
+        <path fill="currentColor" d="M9 22h18v2H9z"></path>
+      </svg>
+    </div>
+      <a href="../index" class="text-decoration-none inline-block mx-auto ampstart-headerbar-home-link  h3 col-6 center">
+        <div class="ampstart-headerbar-title mx-auto ">ELLIOT CHAPPLE</div>
+      </a>
+    <div class="ampstart-headerbar-fixed center m0 p0 flex justify-center nowrap col-3">
+      <div class="mr2">
+      </div>
+      <button id="cta-contact" on="tap:contact" class="ampstart-btn ampstart-btn-secondary relative inline-block overflow-hidden caps h7 center lune-theme-light lune-transparent mr2 xs-hide sm-hide">
+        <span class="relative block z3">Contact Elliot</span>
+        </button>
+    </div>
+  </header>
+  <!-- Start Sidebar -->
+  <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3  " layout="nodisplay">
+    <div class="flex justify-start items-center ampstart-sidebar-header">
+      <div role="button" aria-label="close sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
+    </div>
+    <nav class="ampstart-sidebar-nav ampstart-nav">
+      <ul class="list-reset m0 p0 ampstart-label">
+            <li class="ampstart-nav-item lune-underline-strike relative block col-10 h4 md-h2 caps"><a aria-label="Home" class="ampstart-nav-link" href="../index"><span>H</span><span>o</span><span>m</span><span>e</span></a></li>
+            <li class="ampstart-nav-item lune-underline-strike relative block col-10 h4 md-h2 caps"><a aria-label="Blanc" class="ampstart-nav-link" href="../elliots-talent-timeline-as-tech-product-and-marketing-manager"><span>T</span><span>a</span><span>l</span><span>e</span><span>n</span><span>t</span><span>s</span></a></li>
+            <li class="ampstart-nav-item lune-underline-strike relative block col-10 h4 md-h2 caps"><a aria-label="Noir" class="ampstart-nav-link" href="../index#posts"><span>B</span><span>l</span><span>o</span><span>g</span></a></li>
+            <li class="ampstart-nav-item lune-underline-strike relative block col-10 h4 md-h2 caps"><a id="menu-contact" on="tap:contact" aria-label="Store" class="ampstart-nav-link" href="how-i-landed-20k-sponsorship-for-my-business#contact"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a></li>
+      </ul>
+    </nav>
+  </amp-sidebar>
+  <!-- End Sidebar -->
+  <!-- End Navbar -->
+  <main role="main" class="lune-overlay">
+    <header class="lune-overlay-hero relative flex items-center justify-center overflow-hidden mx2 mt2 sm-m0">
+      <figure class="lune-overlay-hero-image absolute left-0 m0 col-12">
+        <!-- Mobile -->
+        <!-- WebP -->
+        <amp-img class="lighten" alt="Elliot chapple in Rotterdam" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_crop,h_380,w_646/v1648110491/metrics-driven-improvements/elliot-in-rotterdam-hero-image_xqmgxk.webp" layout="responsive" width="500" height="375" media="(max-width: 719px)">
+            <!-- Fallback when WebP is not supported -->
+            <amp-img class="lighten" fallback="" alt="Elliot chapple in Rotterdam" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_crop,h_380,w_646/v1648110491/metrics-driven-improvements/elliot-in-rotterdam-hero-image_xqmgxk.png" layout="responsive" width="500" height="375"></amp-img>
+        </amp-img>
+        <!-- Desktop -->
+        <!-- WebP -->
+        <amp-img class="lighten" alt="Elliot chapple in Rotterdam" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110491/metrics-driven-improvements/elliot-in-rotterdam-hero-image_xqmgxk.webp" layout="responsive" width="960" height="720" media="(min-width: 720px)">
+            <!-- Fallback when WebP is not supported -->
+            <amp-img class="lighten" fallback="" alt="Elliot chapple in Rotterdam" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110491/metrics-driven-improvements/elliot-in-rotterdam-hero-image_xqmgxk.png" layout="responsive" width="960" height="720"></amp-img>
+        </amp-img>
+      </figure>
+      <div class="relative z1 center">
+          <h1 class="lune-overlay-hero-title h3 mb4 mx-auto col-10 caps lune-anim-move-up">How I uncovered key product flaws with metrics</h1>
+        <h2 class="h5 caps">
+            <amp-timeago layout="fixed" width="300"
+                height="30"
+                datetime="2014-02-24T14:15:33.809Z" 
+                locale="en">Thursday 15 Oct 2020 14.15 
+            </amp-timeago>  
+        </h2>
+        </div>
+    </header>
+    <div class="master">
+        <div class="flex container">
+            <h2 class="h3 caps">
+                <span class="">Driving product improvements through metrics</span>
+            </h2>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">
+                        A good metric is like a ship’s compass that can be used to mark a crew’s position, warning them if they’re veering off their bearing and validating that their efforts are leading them to where they want to be. A metric, like a compass, is an aid that when used with other information, can verify your pirate ship’s position on that treasure map and keep you on track to get that precious booty.
+                    </p>
+                    <p class="mb2">
+                        But like a compass that hasn't been calibrated to the ship’s magnetic idiosyncrasies, or the magnetic deviation of the area, a metric, can give a team false perceptions. It’s important to ask the following two questions.
+                    </p>
+                    <p class="mb2">
+                        <ol>
+                            <li>What other signs indicate my report is accurate?</li>
+                            <li>How does the metric relate to your customer's feelings?</li>
+                        </ol>
+                    </p>
+                    <p class="mb2">Let me share two examples of when I was completely off the mark with both these points.</p>
+                    <p class="mb2">During my time at Europe’s biggest mid-term rental marketplace HousingAnywhere, I had the pleasure to work on a feature that we called HousingAnywhere payments. HousingAnywhere payments allowed property managers to automate their rental expanse payment collection. Essentially property managers could request money from tenants through our platform. This would typically be things like damage deposits and monthly rent.</p>
+                </div>
+            </div>
+            <h2 class="h3 caps">
+                <span class="">Payment Success Rate</span>
+            </h2>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">
+                        Whenever we talked about this feature we’d refer to a metric that we called the success rate. We were sharing reports throughout the company and using this guardrail metric to make decisions about how successful the product was in general.
+                    </p>
+                    <p class="mb2">Here’s how it was calculated;</p>
+                    <div class="embed mb1">
+                        <amp-img alt="Success rate calculation" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110485/metrics-driven-improvements/old-payment-success-rate-calculation_bq5dcp.webp" layout="responsive" width="960" height="378">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Success rate calculation" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110485/metrics-driven-improvements/old-payment-success-rate-calculation_bq5dcp.png" layout="responsive" width="960" height="378"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        Everything seemed fine right, nice and simple calculation. But keep reading to learn about how this became an issue.
+                    </p>
+                    <p class="mb2">
+                        Throughout some analysis, we found that property managers were increasingly creating payments due long into the future. So in response, we introduced a new feature that allowed property managers to set up an entire payment plan in one action. This action was typically undertaken by a property manager at the beginning of a tenancy. They would set everything up and let HousingAnywhere be responsible for collecting their money from the tenant.
+                    </p>
+                    <p class="mb2">
+                        Not long after launching this feature, we saw a meteoric drop in the payment request success rate. Although, this drop wasn’t reflected in any of our other reporting. Our payment volumes and usability metrics remained within their control limits. It was soon clear that there were <i>no other signs to verify this report was working as we expected.</i>
+                    </p>
+                    <p class="mb2">
+                        So how did we explain the drop in success rate? Too much rum clouding our judgement? Or Scurvy maybe?
+                    </p>
+                    <p class="mb2">
+                        Well, as you remember from the calculation above, payment collection was compared on a created vs paid basis. This worked fine when payments were due immediately, but broke when property managers created payments to be paid in the future, some up to 12 months into the future. Imagine a property manager creating 12 payments, one for each month’s rent for an entire year, but only one would be due immediately. You may have already realised that this would increase the denominator, and regardless of the numerator, leads to a much lower value. That explained our success rate drop.
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="3 months success rate timeline" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110487/metrics-driven-improvements/payment-monthly-calculation-based-on-created-date_xjy7sj.webp" layout="responsive" width="960" height="378">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Success rate calculation" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110487/metrics-driven-improvements/payment-monthly-calculation-based-on-created-date_xjy7sj.png" layout="responsive" width="960" height="378"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        This then forced us to ask ourselves what success for a property manager truly was before proceeding. In other words, how does what you’re reporting relate to the customer's feelings?
+                    </p>
+                    <p class="mb2">
+                        So after researching some of our key property managers, we found that the most important customer feeling to attribute success to was having their rental expenses paid on time. In other words, not collecting the money on time should be considered a “failure”. This definition became the basis of our new metric.
+                    </p>
+                    <p class="mb2">
+                        The biggest change here was that instead of basing everything on payment creation, it would need to be based on the payment due date.
+                    </p>
+                    <p class="mb2">
+                        This is when we conceived the “payment conversion window” approach. The concept was simple, all payment requests would have a payment conversion window. When it opens - and we expect the payment to be made soon, and when it closes - and when the payment should have been completed already. Then all that’s required is looking at all the payments with their conversion window closed for a timeframe, and checking if they’ve been collected or not.
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="Ball and Goal illustration" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110485/metrics-driven-improvements/payment-conversion-window-illustration_jvweyp.webp" layout="responsive" width="960" height="226">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Ball and Goal illustration" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110485/metrics-driven-improvements/payment-conversion-window-illustration_jvweyp.png" layout="responsive" width="960" height="226"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        We had a metric! but now we wanted to show this metric to stakeholders visually. We needed a report.
+                    </p>
+                    <p class="mb2">
+                        We decided a stepped conversion funnel would lend itself best to this metric. But this came with two hurdles to overcome, mostly on the Mixpanel side of things.
+                    </p>
+                    <p class="mb2">
+                        <ol>
+                            <li>The conversion window couldn’t be based on the window closing, it had to be based on the window opening. In Mixpanel, to make funnels, product people define two events that happen in succession (or not). The first event starts the tracking, the second measures the success. In our case, the funnel was `all the payment windows that opened that were followed by a payment` instead of `those payments collected that were preceded by a payment window opening`. The approach of starting with the window opening came with a bonus. By not declaring a payment conversion window close time, we had the flexibility to set this in Mixpanel directly without needing engineers.</li>
+                            <li>It was also important to make sure the granularity was set to the individual payments, and not the users. The report needs to show the number of absolute payments and not the users with payments. Keep in mind that Mixpanel sets users as their main object. Whenever anything happens your application sends an event to Mixpanel with the user’s id (if it’s available) plus the data on the interaction. We had to send the payment’s unique id so if a payment was successful it correlated to its payment conversion window opening and not another unrated one from the same user.</li>
+                        </ol>
+                    </p>
+                    <p class="mb2">
+                        One final consideration with events-based reporting tools like Mixpanel is specific to marketplaces… In a marketplace, you always have two parties to think about, the seller and the buyer. In our case, we collected money from tenants (buyers) and pay it to property managers (sellers). We had to send two events for every interaction, one with each user’s id. This allowed us to eventually create other reports for both the tenant and the property manager separately.
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="payment success funnel" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-success-rate-conversion-funnel_yec3tb.webp" layout="responsive" width="960" height="275">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="payment success funnel" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-success-rate-conversion-funnel_yec3tb.png" layout="responsive" width="960" height="275"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        Well at this point we were happy to have a success rate metric. But our sails weren’t full of wind just yet. We were only halfway and found some of our other metrics also had to have their metrics reviewed. The other main metric we used was Monthly Active Users.
+                    </p>
+                </div>
+            </div>
+            <h2 class="h3 caps">
+                <span class="">Monthly Active Users</span>
+            </h2>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">
+                        Our old definition used the created a payment event to define a user as active in a given month. See how with the illustration
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="Landlord crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.webp" layout="responsive" width="960" height="372">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Landlord crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.png" layout="responsive" width="960" height="372"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        But we wanted to redefine what “active” actually was within a month, and there were numerous options; Visited the payments page, Created a new payment, had a payment scheduled already, had a payment collected or had a payment paid out.
+                    </p>
+                    <p class="mb2">
+                        We realised the intention to use the product on the property manager side was best to constitute a property manager as “active”. This means having a payment scheduled in a month was the best option. This way if the tenant never paid the scheduled payment, the property manager's definition of “active” isn’t impacted. After all, they had the intention to use the product.
+                    </p>
+                    <p class="mb2">
+                        The final definition of active was all unique property managers in a month who had a payment due OR created a payment. Tracking property managers who created a payment in a month meant we included the property manager who had a booking in the current month but set their first payment for the next month. This is very common considering the booking would cover the first month and the payments feature worked on all other money except the booking
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.webp" layout="responsive" width="960" height="354">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.png" layout="responsive" width="960" height="354"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        We then learned a thing or two along the way.
+                    </p>
+                    <p class="mb2">
+                        After a few months, we realised this wasn’t ideal. We found that many property managers that stopped using HA payments never deleted their old payments that were scheduled months into the future. This would result in them being “active” for all those months they had a payment scheduled.
+                    </p>
+                    <p class="mb2">
+                        We then changed the definition again from those property managers in a given month who had a payment scheduled to those who had one collected. This we found to be the best overall measurement of product success from the property manager side.
+                    </p>
+                    <p class="mb2">
+                        But the problem of property managers stopping using our scheduled payments tool stuck in the spirit of the team. What were we missing? Was it time for a mutiny and a new captain to the ship?
+                    </p>
+                </div>
+            </div>
+            <h2 class="h3 caps">
+                <span class="">Product Improvements time</span>
+            </h2>
+
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">
+                        Along with the drop in monthly active users due to the change of the definition of “active” from scheduled to collected, we noted a rather low success rate for payments.
+                    </p>
+                    <div class="embed mb1">
+                        <amp-img alt="Success rate image" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110490/metrics-driven-improvements/monthly-success-rate_nbi07d.webp" layout="responsive" width="960" height="449">
+                            <!-- Fallback when WebP is not supported -->
+                            <amp-img fallback="" alt="Success rate image" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110490/metrics-driven-improvements/monthly-success-rate_nbi07d.png" layout="responsive" width="960" height="449"></amp-img>
+                        </amp-img>
+                    </div>
+                    <p class="mb2">
+                        Some of these failed payments we discovered to be attributed to the tenant’s location. Which validated our assumptions that our payment methods available were limiting for tenants. We found that our second biggest market, Germany, was missing SOFORT (a push-based customer-initiated bank transfer). We then added SOFORT to our roadmap.
+                    </p>
+                    <p class="mb2">
+                        But an even bigger lesson was on the horizon.
+                    </p>
+                    <p class="mb2">
+                        After watching what seemed to be an unusually low number of payment requests being paid, we learned there was something we were missing. How could it be that 1 out of 3 tenants aren't paying their rent on time?
+                    </p>
+                    <p class="mb2">
+                        We found a few property managers that had a few consecutive months of having payment due. We then lined up some phone calls to try to understand what was going on. What we found was that some property managers stopped using the payments feature, but never cancelled their payments. These payments were sitting there, not dead nor alive to the user, but influencing our reporting each day, month, quarter and year. This was the moment we discovered “Zombie Payments”. Zombie payments are those payments that should have been cancelled, but instead, sit there doing nothing.
+                    </p>
+                    <p class="mb2">
+                        The zombie payment requests lead us to more questions, which helped us verify the position the team was in and helped us make the next moves to steer our ship towards a more successful product.
+                    </p>
+
+                    <p class="mb2">
+                        The main two are;
+                        <ul>
+                            <li>What situations lead to property managers having payments that become no longer necessary?</li>
+                            <li>When in these situations, why aren’t property managers cancelling these no longer required payments?</li>
+                        </ul>
+                    </p>
+                    <p class="mb2">
+                        These two questions would be the next stage of our user research, and by this stage, the metrics had served their purpose. They represented real negative feelings of users and along with other tools, gave us a health check on our payments feature.
+                    </p>
+                    <p class="mb2">
+                        With this, we were able to steer the crew to safer waters by improving our product through learning, validation, and discovery.
+                    </p>
+                    <p class="mb2">
+                        Fair winds to all ye fellow pirates!
+                    </p>
+                </div>
+            </div>
+            <div class="lune-title-bottom relative">
+                <h1 class="lune-product-title" aria-label="BLANC">
+                    <amp-img style="width:150px" alt="%%" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1559142612/signature_pzz2z4.webp" layout="responsive" width="357" height="179">
+                        <!-- Fallback when WebP is not supported -->
+                        <amp-img style="width:150px" fallback="" alt="%%" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1559142612/signature_pzz2z4.png" layout="responsive" width="357" height="179"></amp-img>
+                    </amp-img>
+                    <span class="caps signature h3">Cheers, <br />Elliot...</span>
+                </h1>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <div class="flex mt2 mb4 justify-center">
+                        <a href="../index#posts">
+                            <button id="cta-contact" class="ampstart-btn ampstart-btn-secondary relative inline-block overflow-hidden caps h7 center lune-theme-light lune-transparent mr2">
+                                <span class="relative block z3">See All Posts</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="flex mt2 mb4 justify-center">
+                        <amp-social-share type="twitter"></amp-social-share>
+                        <amp-social-share type="linkedin"></amp-social-share>
+                        <amp-social-share type="email"></amp-social-share>
+                        <amp-social-share type="facebook"></amp-social-share>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+        <amp-lightbox id="contact" animate-in="fade-in" layout="nodisplay">
+        <div class="lightbox" on="tap:contact.close" role="button" tabindex="0">
+            <div on="tap:contact.open" role="button" tabindex="0" class="flex flex-column p4">
+                <div class="block caps modal">0478 081 851</div>
+                <div class="block caps modal">eschapple@gmail.com</div>
+            </div>
+        </div>
+        </amp-lightbox>
+        <a href="../index#posts" class="ampstart-btn ampstart-btn-secondary relative inline-block overflow-hidden caps h7 center lune-overlay-close fixed flex items-center justify-center right-0 mt2 mr3 md-mt3 p0 z1 text-decoration-none lune-theme-dark z2">
+            <span class="relative block z3 white">x</span>
+        </a>
+</body>
+</html>
