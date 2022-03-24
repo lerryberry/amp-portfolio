@@ -148,7 +148,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
         <h2 class="h5 caps">
             <amp-timeago layout="fixed" width="300"
                 height="30"
-                datetime="2014-02-24T14:15:33.809Z" 
+                datetime="2020-10-15T14:15:33.809Z" 
                 locale="en">Thursday 15 Oct 2020 14.15 
             </amp-timeago>  
         </h2>
@@ -162,7 +162,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
             <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
                     <p class="mb2">
-                        A good metric is like a ship’s compass that can be used to mark a crew’s position, warning them if they’re veering off their bearing and validating that their efforts are leading them to where they want to be. A metric, like a compass, is an aid that when used with other information, can verify your pirate ship’s position on that treasure map and keep you on track to get that precious booty.
+                        A good metric is like a ship’s compass that can be used to mark a crew’s position, warning them if they’re veering off their bearing and validating that their efforts are leading them to where they want to be. A metric, like a compass, is an aid that when used with other information, can verify your ship’s position. For those of you who are pirates, this means you knopw where you are on that treasure map, and you're closer to that precious booty.
                     </p>
                     <p class="mb2">
                         But like a compass that hasn't been calibrated to the ship’s magnetic idiosyncrasies, or the magnetic deviation of the area, a metric, can give a team false perceptions. It’s important to ask the following two questions.
@@ -174,7 +174,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         </ol>
                     </p>
                     <p class="mb2">Let me share two examples of when I was completely off the mark with both these points.</p>
-                    <p class="mb2">During my time at Europe’s biggest mid-term rental marketplace HousingAnywhere, I had the pleasure to work on a feature that we called HousingAnywhere payments. HousingAnywhere payments allowed property managers to automate their rental expanse payment collection. Essentially property managers could request money from tenants through our platform. This would typically be things like damage deposits and monthly rent.</p>
+                    <p class="mb2">During my time at Europe’s biggest mid-term rental marketplace HousingAnywhere, I had the pleasure to work on a feature that we called <i><a href=”https://housinganywhere.com/online-rent-collection” rel=”noopener” target=”_blank”>HousingAnywhere payments</a></i>. HousingAnywhere payments allowed property managers to automate their rental expanse payment collection. Essentially property managers could request money from tenants through our platform. This would typically be things like damage deposits and monthly rent.</p>
                 </div>
             </div>
             <h2 class="h3 caps">
@@ -183,7 +183,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
             <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
                     <p class="mb2">
-                        Whenever we talked about this feature we’d refer to a metric that we called the success rate. We were sharing reports throughout the company and using this guardrail metric to make decisions about how successful the product was in general.
+                        Whenever we talked about <i>HousingAnywhere Payments</i> feature we’d refer to a metric that we called the success rate. We would use a guardrail metric we called the <i>payment success rate</i> to make decisions about how successful the product was in general.
                     </p>
                     <p class="mb2">Here’s how it was calculated;</p>
                     <div class="embed mb1">
@@ -220,7 +220,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         So after researching some of our key property managers, we found that the most important customer feeling to attribute success to was having their rental expenses paid on time. In other words, not collecting the money on time should be considered a “failure”. This definition became the basis of our new metric.
                     </p>
                     <p class="mb2">
-                        The biggest change here was that instead of basing everything on payment creation, it would need to be based on the payment due date.
+                        This meant that instead of basing everything on payment creation, it would need to be based on the payment due date.
                     </p>
                     <p class="mb2">
                         This is when we conceived the “payment conversion window” approach. The concept was simple, all payment requests would have a payment conversion window. When it opens - and we expect the payment to be made soon, and when it closes - and when the payment should have been completed already. Then all that’s required is looking at all the payments with their conversion window closed for a timeframe, and checking if they’ve been collected or not.
@@ -239,12 +239,12 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     </p>
                     <p class="mb2">
                         <ol>
-                            <li>The conversion window couldn’t be based on the window closing, it had to be based on the window opening. In Mixpanel, to make funnels, product people define two events that happen in succession (or not). The first event starts the tracking, the second measures the success. In our case, the funnel was `all the payment windows that opened that were followed by a payment` instead of `those payments collected that were preceded by a payment window opening`. The approach of starting with the window opening came with a bonus. By not declaring a payment conversion window close time, we had the flexibility to set this in Mixpanel directly without needing engineers.</li>
-                            <li>It was also important to make sure the granularity was set to the individual payments, and not the users. The report needs to show the number of absolute payments and not the users with payments. Keep in mind that Mixpanel sets users as their main object. Whenever anything happens your application sends an event to Mixpanel with the user’s id (if it’s available) plus the data on the interaction. We had to send the payment’s unique id so if a payment was successful it correlated to its payment conversion window opening and not another unrated one from the same user.</li>
+                            <li>The conversion window couldn’t be based on the window closing, it had to be based on the window opening. In Mixpanel, to make funnels, product people define two events that happen in succession (or not). The first event starts the tracking, the second measures the success. In our case, the funnel was `all the payment windows that opened that were followed by a payment` instead of `those payments collected that were preceded by a payment window opening`. But luckily the approach of starting with the window opening came with a bonus. By not declaring a payment conversion window close time, we had the flexibility to change this in the future via Mixpanel directly without needing engineers.</li>
+                            <li>It was also important to make sure the granularity was set to the individual payments, and not the users. The report needs to show the number of absolute payments and not the users with payments. Keep in mind that Mixpanel sets users as their main object. Whenever anything happens your application sends an event to Mixpanel with the user’s id (if it’s available) plus the data on the interaction. We had to send the payment’s unique id so if a payment was successful it correlated to its own payment conversion window opening and not another unrelated payment windown from the same user.</li>
                         </ol>
                     </p>
                     <p class="mb2">
-                        One final consideration with events-based reporting tools like Mixpanel is specific to marketplaces… In a marketplace, you always have two parties to think about, the seller and the buyer. In our case, we collected money from tenants (buyers) and pay it to property managers (sellers). We had to send two events for every interaction, one with each user’s id. This allowed us to eventually create other reports for both the tenant and the property manager separately.
+                        One final consideration with events-based reporting tools like Mixpanel can be a gotcha for to marketplaces… In a marketplace, you always have two parties to think about, the seller and the buyer. In our case, we collected money from tenants (buyers) and pay it to property managers (sellers). We had to send two events for every interaction, one with each user’s id. This allowed us to eventually create reports for both the tenant and the property manager separately.
                     </p>
                     <div class="embed mb1">
                         <amp-img alt="payment success funnel" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-success-rate-conversion-funnel_yec3tb.webp" layout="responsive" width="960" height="275">
@@ -253,7 +253,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         </amp-img>
                     </div>
                     <p class="mb2">
-                        Well at this point we were happy to have a success rate metric. But our sails weren’t full of wind just yet. We were only halfway and found some of our other metrics also had to have their metrics reviewed. The other main metric we used was Monthly Active Users.
+                        Well at this point we were happy to have a success rate metric. But our sails weren’t full of wind just yet. We were only halfway and found some of our other metrics also needed to be reviewed. The other main metric we used was Monthly Active Users.
                     </p>
                 </div>
             </div>
@@ -263,7 +263,7 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
             <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
                     <p class="mb2">
-                        Our old definition used the created a payment event to define a user as active in a given month. See how with the illustration
+                        Our old definition used the `created a payment` event to define a user as active in a given month. In other words, if a property manager created a payment they'd only be an active user in the month they created all their payments. Notice in the illustraion how our personal Lucy Landlady is crossed out in October and November?;
                     </p>
                     <div class="embed mb1">
                         <amp-img alt="Landlord crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.webp" layout="responsive" width="960" height="372">
@@ -272,31 +272,31 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         </amp-img>
                     </div>
                     <p class="mb2">
-                        But we wanted to redefine what “active” actually was within a month, and there were numerous options; Visited the payments page, Created a new payment, had a payment scheduled already, had a payment collected or had a payment paid out.
+                        We had to redefine what “active” actually was within a month, and there were numerous options; Visited the payments page, Created a new payment, had a payment scheduled already, had a payment collected or had a payment paid out.
                     </p>
                     <p class="mb2">
-                        We realised the intention to use the product on the property manager side was best to constitute a property manager as “active”. This means having a payment scheduled in a month was the best option. This way if the tenant never paid the scheduled payment, the property manager's definition of “active” isn’t impacted. After all, they had the intention to use the product.
+                        We realised the intention to use the product on the property manager side was best to constitute a property manager as “active”. This means having a payment scheduled in a month was the best option. The thinking was if the tenant never paid the scheduled payment, the property manager's definition of “active” isn’t impacted. After all, they had the intention to use the product.
                     </p>
                     <p class="mb2">
-                        The final definition of active was all unique property managers in a month who had a payment due OR created a payment. Tracking property managers who created a payment in a month meant we included the property manager who had a booking in the current month but set their first payment for the next month. This is very common considering the booking would cover the first month and the payments feature worked on all other money except the booking
+                        The final definition of active was all unique property managers in a month who `had a payment due` OR `created a payment`. Tracking property managers who created a payment in a month meant we included the property manager who had a booking in the current month but set their first payment for the next month. This is very common considering the booking would always cover the first month's rent and the payments feature worked on all other money except the booking
                     </p>
                     <div class="embed mb1">
-                        <amp-img alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.webp" layout="responsive" width="960" height="354">
+                        <amp-img alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-due-date_z6bi67.webp" layout="responsive" width="960" height="354">
                             <!-- Fallback when WebP is not supported -->
-                            <amp-img fallback="" alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-created-at-date_ry3rnz.png" layout="responsive" width="960" height="354"></amp-img>
+                            <amp-img fallback="" alt="Landlord not crossed out" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1648110494/metrics-driven-improvements/payment-monthly-active-users-with-due-date_z6bi67.png" layout="responsive" width="960" height="354"></amp-img>
                         </amp-img>
                     </div>
                     <p class="mb2">
-                        We then learned a thing or two along the way.
+                        But this wasn't good enough in the end, further improvement was required.
                     </p>
                     <p class="mb2">
-                        After a few months, we realised this wasn’t ideal. We found that many property managers that stopped using HA payments never deleted their old payments that were scheduled months into the future. This would result in them being “active” for all those months they had a payment scheduled.
+                        After a few months, we realised this wasn’t ideal. We found that many property managers that stopped using HA payments never deleted their old payments that were scheduled months into the future. This would result in them being “active” for all those months they had a payment scheduled, when in fact they weren't using the product any longer.
                     </p>
                     <p class="mb2">
                         We then changed the definition again from those property managers in a given month who had a payment scheduled to those who had one collected. This we found to be the best overall measurement of product success from the property manager side.
                     </p>
                     <p class="mb2">
-                        But the problem of property managers stopping using our scheduled payments tool stuck in the spirit of the team. What were we missing? Was it time for a mutiny and a new captain to the ship?
+                        But the problem of property managers stopping using our scheduled payments tool stuck in the spirit of the team. What were we missing? Was it time for a mutiny and a new captain of the pirate ship? Who would walk the plank?
                     </p>
                 </div>
             </div>
@@ -325,10 +325,10 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         After watching what seemed to be an unusually low number of payment requests being paid, we learned there was something we were missing. How could it be that 1 out of 3 tenants aren't paying their rent on time?
                     </p>
                     <p class="mb2">
-                        We found a few property managers that had a few consecutive months of having payment due. We then lined up some phone calls to try to understand what was going on. What we found was that some property managers stopped using the payments feature, but never cancelled their payments. These payments were sitting there, not dead nor alive to the user, but influencing our reporting each day, month, quarter and year. This was the moment we discovered “Zombie Payments”. Zombie payments are those payments that should have been cancelled, but instead, sit there doing nothing.
+                        We found a few property managers that had a few consecutive months of unpaid payments. We then lined up some phone calls to try to understand what was going on. What we found was that some property managers stopped using the payments feature, but never cancelled their payments. These payments were sitting there, not dead nor alive to the user, but influencing our reporting each day, month, quarter and year. This was the moment we discovered “Zombie Payments”. Zombie payments are those payments that should have been cancelled, but instead, sit there doing nothing.
                     </p>
                     <p class="mb2">
-                        The zombie payment requests lead us to more questions, which helped us verify the position the team was in and helped us make the next moves to steer our ship towards a more successful product.
+                        Zombie payments lead us to more questions, which helped us verify the position the team was in and helped us make the next moves to steer our ship towards a more successful product.
                     </p>
 
                     <p class="mb2">
