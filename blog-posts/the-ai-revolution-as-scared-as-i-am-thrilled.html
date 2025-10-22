@@ -93,101 +93,84 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
   </amp-sidebar>
   <!-- End Sidebar -->
   <!-- End Navbar -->
-  <main role="main" class="lune-page lune-page-landing">
-    <div class="lune-overlay-hero relative flex flex-column items-center justify-center">
-        <div class="lune-overlay-hero-image relative z1 flex justify-center col-12 m0">
-            <amp-img class="lune-anim-scale-up" alt="AI Revolution - Loom recording of AI development process" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1761129968/blog-ai-revolution/loom.webp" width="800" height="600" layout="responsive">
-            </amp-img>
+  <main role="main" class="lune-overlay">
+    <header class="lune-overlay-hero relative flex items-center justify-center overflow-hidden mx2 mt2 sm-m0">
+      <figure class="lune-overlay-hero-image absolute left-0 m0 col-12">
+        <!-- Mobile -->
+        <!-- WebP -->
+        <amp-img class="lighten" alt="AI Revolution - Loom recording of AI development process" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1761129968/blog-ai-revolution/loom.webp" layout="responsive" width="800" height="600" media="(max-width: 719px)">
+        </amp-img>
+        <!-- Desktop -->
+        <!-- WebP -->
+        <amp-img class="lighten" alt="AI Revolution - Loom recording of AI development process" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1761129968/blog-ai-revolution/loom.webp" layout="responsive" width="800" height="600" media="(min-width: 720px)">
+        </amp-img>
+      </figure>
+      <div class="relative z1 center">
+        <h1 class="lune-overlay-hero-title h3 mb4 mx-auto col-10 caps lune-anim-move-up">The AI Revolution: As scared as I am thrilled</h1>
+        <h2 class="h5 caps">
+            <amp-timeago layout="fixed" width="300"
+                height="30"
+                datetime="2024-12-31T14:15:33.809Z"
+                locale="en">December 31, 2024
+            </amp-timeago>  
+        </h2>
         </div>
-        <div class="lune-overlay-hero-title caps center col-12">
-            <h1 class="h1 caps center col-12">The AI Revolution</h1>
-            <h2 class="h5 caps center col-12 lighten">As scared as I am thrilled</h2>
-        </div>
-        <div class="lune-overlay-copy-subtitle center col-12">
-            <h2 class="h5 caps">
-                <amp-timeago layout="fixed" width="300"
-                    height="30"
-                    datetime="2024-12-31T14:15:33.809Z"
-                    locale="en">December 31, 2024
-                </amp-timeago>  
+    </header>
+    <div class="master">
+        <div class="flex container">
+            <h2 class="h3 caps" >
+                <span class="">The Speed of Change</span>
             </h2>
-        </div>
-    </div>
-    <div class="lune-overlay-content relative flex flex-column items-center justify-center p3 z2">
-        <div class="container master">
-            <div class="content flex">
+            <div class="flex mb2 content" >
                 <div class="col-blog mr1 ml1">
-                    <h2 class="h3 caps" >
-                        The Speed of Change
-                    </h2>
-                    <div class="flex mb2 content" >
-                        <div class="col-blog mr1 ml1">
-                            <p class="mb2">Software development? Yeah, it's changing. For good. I mean, I've built apps before—I was a product manager, I know the drill—but the speed this time? Insane. I dreamt it up, and it was done in a fraction of the time.</p>
-                            <p class="mb2">Coming from the industry, sure, that helps. Understanding the tech, the architecture. It gives you the capability to know what questions to ask. That's the secret sauce non-technical people are gonna miss.</p>
-                            <p class="mb2">I say that, though, watching the older guard clutching at the careers they've spent decades building. It's scary. Things that were natural to me—design principles, good UX/UI practices—now AI just spits 'em out. Only experts knew this stuff, but now AI's automating it.</p>
-                            <p class="mb2">Yeah, I'm nervous. It's a small voice, though. The loud one? It's screaming about the new types of applications, the new possibilities this tech unlocks. It's going to change everything. Everything. I'm sure of it. For good.</p>
-                        </div>
-                    </div>
-                    <h2 class="h3 caps" >
-                        From Static Sites to Shimmering Code ✨
-                    </h2>
-                    <div class="flex mb2 content" >
-                        <div class="col-blog mr1 ml1">
-                            <p class="mb2">Remember the 2000s? Static websites. Fixed layouts, fixed content. Like a newspaper. Web 2.0 came along and let us, the users, manipulate the content. Social media. MySpace. Facebook.</p>
-                            <p class="mb2">Then the Cryptospace came with their Web 3.0, decentralized databases. Cute, looking back. This is the Web 3.0.</p>
-                            <p class="mb2">It's not just the content that'll be dynamic; it's the layouts, the code itself. Everything will probably be in flux, sort of shimmering. I have no idea how that's going to look. Just a guess.</p>
-                            <p class="mb2">Am I scared? A little. I think about the master weavers, the Luddites, who lost their jobs during the Industrial Revolution. New looms, new tech. The difference? That took decades. This? It's going to happen in years.</p>
-                            <p class="mb2">The leap we're taking is fascinating. What's left for us humans to do? I ask myself that constantly. The Industrial Revolution mechanized the muscles—the horses, the oxen, the people—leaving the cognition to us. AI is taking a portion of the cognition.</p>
-                            <p class="mb2">What's left? Answering why. That's the real human role.</p>
-                            <p class="mb2">Think self-driving cars. The "how" is mechanized. No horse and cart, just an engine we direct. The car figures out the gear, the direction. The "why"? Why are you even traveling from A to B? That might be the last job we hold.</p>
-                        </div>
-                    </div>
-                    <h2 class="h3 caps" >
-                        Building a Hybrid House 🏡
-                    </h2>
-                    <div class="flex mb2 content" >
-                        <div class="col-blog mr1 ml1">
-                            <p class="mb2">I started this project after running through some JavaScript courses. Done 'em before. Udemy, months on React, TypeScript, Node.js. This time, I did it again, but I built the entire back end myself. Yes, with AI biology—meaning, AI help with the implementation details.</p>
-                            <p class="mb2">The front end, I built one perfect feature set. A form that saves to the database. Architected it perfectly. Then? I asked the AI to copy my style. I fed it my perfect example and told it to make the other forms. It benchmarked what I'd done, hit the APIs I built by hand.</p>
-                            <p class="mb2">It was like building a house:</p>
-                            <ul class="mb2">
-                                <li><strong>Foundation (the API):</strong> I built that first.</li>
-                                <li><strong>One Wall, One Roof Section:</strong> Built one feature set by hand.</li>
-                                <li><strong>Lateral Copying:</strong> Asked the AI to copy that style for the rest of the house.</li>
-                            </ul>
-                            <p class="mb2">Super efficient. I felt in control. I even told the AI to strictly not look at new design patterns—only use what was already in the app. It mostly followed. I built constantly, non-stop. Over time, I looked less and less at every little code change. Don't know if that's good or not.</p>
-                            <p class="mb2">I got sick of typing, so I found Voice 2 apps. Sped things up a lot. Ended up building the app largely by just talking to my computer.</p>
-                            <p class="mb2">My take on AI? It's a highly skilled expert with a head injury. They know their stuff, but they lose context fast. It forgot my separate types folder and kept putting types in components. It forgot about back-end pagination and tried to do it on the front end. Database design? That was a bridge too far.</p>
-                            <p class="mb2">I used AI, definitely, but the approach was different. More brainstorming, more defining the approach perfectly first, and then letting the AI build.</p>
-                        </div>
-                        <div class="col-blog mr1 ml1 blog-img">
-                            <amp-img alt="AI Development Process" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1761129968/blog-ai-revolution/ai-development-process.webp" width="400" height="300" layout="responsive">
-                            </amp-img>
-                        </div>
-                    </div>
-                    <h2 class="h3 caps" >
-                        Monoliths Are Back, Baby 👶
-                    </h2>
-                    <div class="flex mb2 content" id="right-image">
-                        <div class="col-blog mr1 ml1">
-                            <p class="mb2">Final takeaway: Monoliths are back, baby! One repo for front-end and back-end was huge for AI context. The shape of API calls, the responses—I didn't have to worry about it. Sped things up massively.</p>
-                            <p class="mb2">So, software development is changing for good. I don't know what it looks like, but my expectations were blown away. I didn't think it would be this good. That excites me, and that scares me.</p>
-                            <p class="mb2">There's a lot of change. Where does it land? Maybe it never lands. Maybe it's just in the air forever. But I think it'll be as good as it is bad. A health expert would be cheaper, but a lot of white-collar roles won't exist.</p>
-                            <p class="mb2">The only difference between us and the machines is the why. I built this because I was compelled to. I wanted to. It excited me. I love building things. The machine will never be able to say that.</p>
-                        </div>
-                        <div class="col-blog mr1 ml1 blog-img">
-                            <amp-img alt="Monolith Architecture" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1761129968/blog-ai-revolution/monolith-architecture.webp" width="400" height="300" layout="responsive">
-                            </amp-img>
-                        </div>
-                    </div>
-                    <div class="lune-title-bottom relative">
-                        <h1 class="h1 caps center col-12">The Future is Now</h1>
-                    </div>
-                    <div class="lune-products-bottom-cta relative z1 flex justify-center">
-                        <a href="../index#posts" class="ampstart-btn ampstart-btn-secondary relative inline-block overflow-hidden caps h7 center lune-theme-dark">
-                            <span class="relative block z3">Back to Blog</span>
-                        </a>
-                    </div>
+                    <p class="mb2">Software development? Yeah, it's changing. For good. I mean, I've built apps before—I was a product manager, I know the drill—but the speed this time? Insane. I dreamt it up, and it was done in a fraction of the time.</p>
+                    <p class="mb2">Coming from the industry, sure, that helps. Understanding the tech, the architecture. It gives you the capability to know what questions to ask. That's the secret sauce non-technical people are gonna miss.</p>
+                    <p class="mb2">I say that, though, watching the older guard clutching at the careers they've spent decades building. It's scary. Things that were natural to me—design principles, good UX/UI practices—now AI just spits 'em out. Only experts knew this stuff, but now AI's automating it.</p>
+                    <p class="mb2">Yeah, I'm nervous. It's a small voice, though. The loud one? It's screaming about the new types of applications, the new possibilities this tech unlocks. It's going to change everything. Everything. I'm sure of it. For good.</p>
+                </div>
+            </div>
+            <h2 class="h3 caps" >
+                <span class="">From Static Sites to Shimmering Code ✨</span>
+            </h2>
+            <div class="flex mb2 content" >
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">Remember the 2000s? Static websites. Fixed layouts, fixed content. Like a newspaper. Web 2.0 came along and let us, the users, manipulate the content. Social media. MySpace. Facebook.</p>
+                    <p class="mb2">Then the Cryptospace came with their Web 3.0, decentralized databases. Cute, looking back. This is the Web 3.0.</p>
+                    <p class="mb2">It's not just the content that'll be dynamic; it's the layouts, the code itself. Everything will probably be in flux, sort of shimmering. I have no idea how that's going to look. Just a guess.</p>
+                    <p class="mb2">Am I scared? A little. I think about the master weavers, the Luddites, who lost their jobs during the Industrial Revolution. New looms, new tech. The difference? That took decades. This? It's going to happen in years.</p>
+                    <p class="mb2">The leap we're taking is fascinating. What's left for us humans to do? I ask myself that constantly. The Industrial Revolution mechanized the muscles—the horses, the oxen, the people—leaving the cognition to us. AI is taking a portion of the cognition.</p>
+                    <p class="mb2">What's left? Answering why. That's the real human role.</p>
+                    <p class="mb2">Think self-driving cars. The "how" is mechanized. No horse and cart, just an engine we direct. The car figures out the gear, the direction. The "why"? Why are you even traveling from A to B? That might be the last job we hold.</p>
+                </div>
+            </div>
+            <h2 class="h3 caps" >
+                <span class="">Building a Hybrid House 🏡</span>
+            </h2>
+            <div class="flex mb2 content" >
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">I started this project after running through some JavaScript courses. Done 'em before. Udemy, months on React, TypeScript, Node.js. This time, I did it again, but I built the entire back end myself. Yes, with AI biology—meaning, AI help with the implementation details.</p>
+                    <p class="mb2">The front end, I built one perfect feature set. A form that saves to the database. Architected it perfectly. Then? I asked the AI to copy my style. I fed it my perfect example and told it to make the other forms. It benchmarked what I'd done, hit the APIs I built by hand.</p>
+                    <p class="mb2">It was like building a house:</p>
+                    <ul class="mb2">
+                        <li><strong>Foundation (the API):</strong> I built that first.</li>
+                        <li><strong>One Wall, One Roof Section:</strong> Built one feature set by hand.</li>
+                        <li><strong>Lateral Copying:</strong> Asked the AI to copy that style for the rest of the house.</li>
+                    </ul>
+                    <p class="mb2">Super efficient. I felt in control. I even told the AI to strictly not look at new design patterns—only use what was already in the app. It mostly followed. I built constantly, non-stop. Over time, I looked less and less at every little code change. Don't know if that's good or not.</p>
+                    <p class="mb2">I got sick of typing, so I found Voice 2 apps. Sped things up a lot. Ended up building the app largely by just talking to my computer.</p>
+                    <p class="mb2">My take on AI? It's a highly skilled expert with a head injury. They know their stuff, but they lose context fast. It forgot my separate types folder and kept putting types in components. It forgot about back-end pagination and tried to do it on the front end. Database design? That was a bridge too far.</p>
+                    <p class="mb2">I used AI, definitely, but the approach was different. More brainstorming, more defining the approach perfectly first, and then letting the AI build.</p>
+                </div>
+            </div>
+            <h2 class="h3 caps" >
+                <span class="">Monoliths Are Back, Baby 👶</span>
+            </h2>
+            <div class="flex mb2 content" id="right-image">
+                <div class="col-blog mr1 ml1">
+                    <p class="mb2">Final takeaway: Monoliths are back, baby! One repo for front-end and back-end was huge for AI context. The shape of API calls, the responses—I didn't have to worry about it. Sped things up massively.</p>
+                    <p class="mb2">So, software development is changing for good. I don't know what it looks like, but my expectations were blown away. I didn't think it would be this good. That excites me, and that scares me.</p>
+                    <p class="mb2">There's a lot of change. Where does it land? Maybe it never lands. Maybe it's just in the air forever. But I think it'll be as good as it is bad. A health expert would be cheaper, but a lot of white-collar roles won't exist.</p>
+                    <p class="mb2">The only difference between us and the machines is the why. I built this because I was compelled to. I wanted to. It excited me. I love building things. The machine will never be able to say that.</p>
                 </div>
             </div>
         </div>
