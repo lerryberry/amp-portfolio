@@ -8,7 +8,6 @@
   <meta name="description" content="Learn more about my journey, projects, talents and career in tech as a product manager. I’m a risk-taker and a lifelong learner, everything I do will be documented here for you to learn from or laugh about!" />
   <meta name="amp-google-client-id-api" content="googleanalytics">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://app.posthog.com">
   <meta property="og:title" content="Elliot Chapple's Professional Timeline" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.cheerselliot.com/elliots-talent-timeline-as-tech-product-and-marketing-manager" />
@@ -31,94 +30,83 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 </style>
 </head>
 <body class="lune lune-overlay-poly">
-    <!-- Configure analytics -->
-    <amp-analytics type="googleanalytics" >
-        <script type="application/json">
-        {
+    <!-- Google Analytics 4 -->
+  <amp-analytics type="googleanalytics" config="https://cheerselliot.com/assets/ga4.json" data-credentials="include">
+    <script type="application/json">
+      {
+        "vars": {
+          "GA4_MEASUREMENT_ID": "G-X37YHCBTH6",
+          "DEFAULT_PAGEVIEW_ENABLED": true
+        },
+        "triggers": {
+          "page_view": {
+            "enabled": true,
+            "on": "visible",
+            "request": "ga4Pageview",
+            "extraUrlParams": {
+              "event__str_experiment_id": "kIz0Fzl0RmucuOuZuOpgog",
+              "event__str_variant": "VARIANT(btn-colour-experiment)"
+            }
+          },
+          "click on #contact trigger": {
+            "on": "click",
+            "selector": "#cta-contact",
+            "request": "ga4Event",
             "vars": {
-                "account": "UA-140722528-1"
+              "ga4_event_name": "cta_clicked"
             },
-            "requests": {
-                "experiment": "${pageview}&xid=${xid}&xvar=${xvar}"
+            "extraUrlParams": {
+              "event__str_cta": "contact",
+              "event__str_event_category": "CTAs"
+            }
+          },
+          "click on #phonechat trigger": {
+            "on": "click",
+            "selector": "#cta-phone-chat",
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "cta_clicked"
             },
-            "triggers": {
-                "trackPageview": {
-                    "on": "visible",
-                    "request": "experiment",
-                    "vars": {
-                        "xid": "kIz0Fzl0RmucuOuZuOpgog",
-                        "xvar": "VARIANT(btn-colour-experiment)"
-                    }
-                },
-                "click on #contact trigger": {
-                    "on": "click",
-                    "selector": "#cta-contact",
-                    "request": "event",
-                    "vars": {
-                        "eventCategory": "CTAs",
-                        "eventAction": "clicked",
-                        "eventLabel": "contact"
-                    }
-                },
-                "click on #phonechat trigger": {
-                    "on": "click",
-                    "selector": "#cta-phone-chat",
-                    "request": "event",
-                    "vars": {
-                        "eventCategory": "CTAs",
-                        "eventAction": "clicked",
-                        "eventLabel": "chat"
-                    }
-                },
-                "scrollPings": {
-                    "on": "scroll",
-                    "scrollSpec": {
-                        "verticalBoundaries": [70]
-                    },
-                    "request": "event",
-                    "vars": {
-                        "eventCategory": "engagement",
-                        "eventAction": "scroll",
-                        "eventLabel": "70-percent"
-                    }
-                },
-                "pageTimer": {
-                    "on": "timer",
-                    "timerSpec": {
-                        "interval": 120,
-                        "maxTimerLength": 600
-                    },
-                    "request": "event",
-                    "vars": {
-                        "eventCategory": "engagement",
-                        "eventAction": "timer",
-                        "eventLabel": "10-seconds"
-                    }
-                }
+            "extraUrlParams": {
+              "event__str_cta": "phone_chat",
+              "event__str_event_category": "CTAs"
             }
-        }            
-        </script>
-    </amp-analytics>
-  <amp-analytics config="assets/posthog-analytics.json"></amp-analytics>
-  <amp-analytics config="assets/posthog-cta.json"></amp-analytics>
-  <amp-analytics config="assets/posthog-engagement.json"></amp-analytics>
-
-    
-    <!-- configure multivariant tests -->
-    <amp-experiment>
-        <script type="application/json">
-            {
-                "btn-colour-experiment": {
-                    "sticky": false,
-                    "variants": {
-                        "1": 30,
-                        "2": 30
-                    }
-                }
+          },
+          "scrollPings": {
+            "on": "scroll",
+            "scrollSpec": {
+              "verticalBoundaries": [
+                70
+              ]
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "scroll"
+            },
+            "extraUrlParams": {
+              "event__num_percent_scrolled": 70,
+              "event__str_event_category": "engagement"
             }
-        </script>
-    </amp-experiment>
-    <hr class="vertical-line">
+          },
+          "pageTimer": {
+            "on": "timer",
+            "timerSpec": {
+              "interval": 120,
+              "maxTimerLength": 600
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "engagement_timer"
+            },
+            "extraUrlParams": {
+              "event__num_seconds": 120,
+              "event__str_event_category": "engagement"
+            }
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
   <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
     <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 col-3 ">

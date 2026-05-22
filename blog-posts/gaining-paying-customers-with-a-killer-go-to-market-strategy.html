@@ -9,7 +9,6 @@
     <meta name="description" content="Here's a summary of how our company corroborated around a killer go-to-market strategy, which saw us earning our first paying customers." />
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <link rel="shortcut icon" type="image/png" href="../favicon.png">
-  <link rel="preconnect" href="https://app.posthog.com">
     
     <meta property="og:title" content="Earning paying customers with a killer go-to-market strategy" />
     <meta property="og:type" content="website" />
@@ -22,6 +21,7 @@
   <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async=""></script>
   <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
   <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
   <script async custom-element="amp-timeago" src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script>
   <script async custom-element="amp-google-document-embed" src="https://cdn.ampproject.org/v0/amp-google-document-embed-0.1.js"></script>
   <script async custom-element="amp-experiment" src="https://cdn.ampproject.org/v0/amp-experiment-0.1.js"></script>
@@ -36,65 +36,63 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 </style>
 </head>
 <body class="lune lune-overlay-poly">
-  <!-- Configure analytics -->
-    <amp-analytics type="googleanalytics" >
-        <script type="application/json">
-            {
-                "vars": {
-                    "account": "UA-140722528-1"
-                },
-                "triggers": {
-                    "trackPageview": {
-                        "on": "visible",
-                        "request": "pageview",
-                        "vars": {
-                            "eventCategory": "content",
-                            "eventAction": "view",
-                            "eventLabel": "blog-post"
-                        }
-                    },
-                    "click on #contact trigger": {
-                        "on": "click",
-                        "selector": "#cta-contact",
-                        "request": "event",
-                        "vars": {
-                            "eventCategory": "CTAs",
-                            "eventAction": "clicked",
-                            "eventLabel": "contact"
-                        }
-                    },
-                    "scrollPings": {
-                        "on": "scroll",
-                        "scrollSpec": {
-                            "verticalBoundaries": [70]
-                        },
-                        "request": "event",
-                        "vars": {
-                            "eventCategory": "engagement",
-                            "eventAction": "scroll",
-                            "eventLabel": "70-percent"
-                        }
-                    },
-                    "pageTimer": {
-                        "on": "timer",
-                        "timerSpec": {
-                            "interval": 10,
-                            "maxTimerLength": 600
-                        },
-                        "request": "event",
-                        "vars": {
-                            "eventCategory": "engagement",
-                            "eventAction": "timer",
-                            "eventLabel": "10-seconds"
-                        }
-                    }
-                }
+  <!-- Google Analytics 4 -->
+  <amp-analytics type="googleanalytics" config="https://cheerselliot.com/assets/ga4.json" data-credentials="include">
+    <script type="application/json">
+      {
+        "vars": {
+          "GA4_MEASUREMENT_ID": "G-X37YHCBTH6",
+          "DEFAULT_PAGEVIEW_ENABLED": true
+        },
+        "triggers": {
+          "click on #contact trigger": {
+            "on": "click",
+            "selector": "#cta-contact",
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "cta_clicked"
+            },
+            "extraUrlParams": {
+              "event__str_cta": "contact",
+              "event__str_event_category": "CTAs"
             }
-        </script>
-    </amp-analytics>
-  <amp-analytics config="../assets/posthog-analytics.json"></amp-analytics>
-
-  <!-- Start Navbar -->
+          },
+          "scrollPings": {
+            "on": "scroll",
+            "scrollSpec": {
+              "verticalBoundaries": [
+                70
+              ]
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "scroll"
+            },
+            "extraUrlParams": {
+              "event__num_percent_scrolled": 70,
+              "event__str_event_category": "engagement"
+            }
+          },
+          "pageTimer": {
+            "on": "timer",
+            "timerSpec": {
+              "interval": 10,
+              "maxTimerLength": 600
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "engagement_timer"
+            },
+            "extraUrlParams": {
+              "event__num_seconds": 10,
+              "event__str_event_category": "engagement"
+            }
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
+<!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
     <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 col-3 ">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">

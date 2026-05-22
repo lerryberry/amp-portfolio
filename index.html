@@ -8,7 +8,6 @@
   <meta name="description" content="Follow my journey as I blog about my entrepreneurial spirit, startups, failures, successes and all the lesson I learn along the way." />
   <meta name="amp-google-client-id-api" content="googleanalytics">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://app.posthog.com">
 
   <meta property="og:title" content="Startups, Adventures & Entrepreneurship with Elliot Chapple" />
   <meta property="og:type" content="website" />
@@ -67,41 +66,43 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 </style>
 </head>
 <body class="lune lune-blanc lune-theme-light">
-  <!-- Configure analytics -->
-  <amp-analytics type="googleanalytics" >
+  <!-- Google Analytics 4 -->
+  <amp-analytics type="googleanalytics" config="https://cheerselliot.com/assets/ga4.json" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
-          "account": "UA-140722528-1"
+          "GA4_MEASUREMENT_ID": "G-X37YHCBTH6",
+          "DEFAULT_PAGEVIEW_ENABLED": true
         },
         "triggers": {
           "click on #contact trigger": {
             "on": "click",
             "selector": "#cta-contact",
-            "request": "event",
+            "request": "ga4Event",
             "vars": {
-              "eventCategory": "CTAs",
-              "eventAction": "clicked",
-              "eventLabel": "contact"
+              "ga4_event_name": "cta_clicked"
+            },
+            "extraUrlParams": {
+              "event__str_cta": "contact",
+              "event__str_event_category": "CTAs"
             }
           },
           "click on #portfolio trigger": {
             "on": "click",
             "selector": "#cta-portfolio",
-            "request": "event",
+            "request": "ga4Event",
             "vars": {
-              "eventCategory": "CTAs",
-              "eventAction": "clicked",
-              "eventLabel": "portfolio"
+              "ga4_event_name": "cta_clicked"
+            },
+            "extraUrlParams": {
+              "event__str_cta": "portfolio",
+              "event__str_event_category": "CTAs"
             }
           }
         }
       }
     </script>
   </amp-analytics>
-  <amp-analytics config="assets/posthog-analytics.json"></amp-analytics>
-  <amp-analytics config="assets/posthog-cta.json"></amp-analytics>
-
   <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
     <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 col-3 ">
