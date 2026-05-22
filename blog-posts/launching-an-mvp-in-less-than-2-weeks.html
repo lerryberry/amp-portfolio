@@ -9,6 +9,7 @@
     <meta name="description" content="Here's a case study on our team launched a simple MVP experiment in 2 weeklong sprints. Gathering critical information but most importantly learning together." />
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <link rel="shortcut icon" type="image/png" href="../favicon.png">
+  <link rel="preconnect" href="https://app.posthog.com">
     
     <meta property="og:title" content="How I We Launched an MVP in 2 Week-long Sprints" />
     <meta property="og:type" content="website" />
@@ -93,6 +94,8 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
             }
         </script>
     </amp-analytics>
+  <amp-analytics config="../assets/posthog-analytics.json"></amp-analytics>
+
   <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
     <div role="button" aria-label="open sidebar" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger  pr2 col-3 ">

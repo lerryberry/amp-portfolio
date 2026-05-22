@@ -8,6 +8,7 @@
   <meta name="description" content="Learn more about my journey, projects, talents and career in tech as a product manager. I’m a risk-taker and a lifelong learner, everything I do will be documented here for you to learn from or laugh about!" />
   <meta name="amp-google-client-id-api" content="googleanalytics">
   <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://app.posthog.com">
   <meta property="og:title" content="Elliot Chapple's Professional Timeline" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.cheerselliot.com/elliots-talent-timeline-as-tech-product-and-marketing-manager" />
@@ -98,6 +99,72 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
         }            
         </script>
     </amp-analytics>
+  <amp-analytics config="assets/posthog-analytics.json"></amp-analytics>
+  <amp-analytics>
+    <script type="application/json">
+    {
+      "vars": {
+        "posthogApiKey": "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ"
+      },
+      "requests": {
+        "event": "https://app.posthog.com/capture/"
+      },
+      "extraUrlParams": {
+        "api_key": "${posthogApiKey}",
+        "distinct_id": "${clientId}",
+        "properties": {
+          "site": "cheerselliot",
+          "$process_person_profile": false
+        }
+      },
+      "triggers": {
+        "click on #contact trigger": {
+          "on": "click",
+          "selector": "#cta-contact",
+          "request": "event",
+          "extraUrlParams": {
+            "event": "cta_clicked",
+            "properties": { "cta": "contact" }
+          }
+        },
+        "click on #phonechat trigger": {
+          "on": "click",
+          "selector": "#cta-phone-chat",
+          "request": "event",
+          "extraUrlParams": {
+            "event": "cta_clicked",
+            "properties": { "cta": "phone_chat" }
+          }
+        },
+        "scrollPings": {
+          "on": "scroll",
+          "scrollSpec": { "verticalBoundaries": [70] },
+          "request": "event",
+          "extraUrlParams": {
+            "event": "scroll_depth",
+            "properties": { "percent": 70 }
+          }
+        },
+        "pageTimer": {
+          "on": "timer",
+          "timerSpec": { "interval": 120, "maxTimerLength": 600 },
+          "request": "event",
+          "extraUrlParams": {
+            "event": "engagement_timer",
+            "properties": { "seconds": 120 }
+          }
+        }
+      },
+      "transport": {
+        "beacon": true,
+        "xhrpost": true,
+        "image": false,
+        "useBody": true
+      }
+    }
+    </script>
+  </amp-analytics>
+
     
     <!-- configure multivariant tests -->
     <amp-experiment>
