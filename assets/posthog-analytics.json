@@ -3,12 +3,12 @@
     "posthogApiKey": "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ"
   },
   "requests": {
-    "pageview": "https://app.posthog.com/capture/",
-    "event": "https://app.posthog.com/capture/"
+    "capture": "https://app.posthog.com/capture/"
   },
   "extraUrlParams": {
     "api_key": "${posthogApiKey}",
-    "distinct_id": "${clientId}",
+    "event": "$pageview",
+    "distinct_id": "${clientId('posthog')}",
     "properties": {
       "$current_url": "${canonicalUrl}",
       "$pathname": "${pathname}",
@@ -22,10 +22,7 @@
   "triggers": {
     "trackPageview": {
       "on": "visible",
-      "request": "pageview",
-      "extraUrlParams": {
-        "event": "$pageview"
-      }
+      "request": "capture"
     }
   },
   "transport": {

@@ -1,0 +1,47 @@
+{
+  "vars": {
+    "posthogApiKey": "phc_Ju4K4bBXyI79wej0tzGRdMnJTYovgalsSVigfm0clOJ"
+  },
+  "requests": {
+    "capture": "https://app.posthog.com/capture/"
+  },
+  "extraUrlParams": {
+    "api_key": "${posthogApiKey}",
+    "event": "engagement",
+    "distinct_id": "${clientId('posthog')}",
+    "properties": {
+      "site": "cheerselliot",
+      "$process_person_profile": false
+    }
+  },
+  "triggers": {
+    "scrollPings": {
+      "on": "scroll",
+      "scrollSpec": { "verticalBoundaries": [70] },
+      "request": "capture",
+      "extraUrlParams": {
+        "properties": {
+          "engagement": "scroll",
+          "percent": 70
+        }
+      }
+    },
+    "pageTimer": {
+      "on": "timer",
+      "timerSpec": { "interval": 120, "maxTimerLength": 600 },
+      "request": "capture",
+      "extraUrlParams": {
+        "properties": {
+          "engagement": "timer",
+          "seconds": 120
+        }
+      }
+    }
+  },
+  "transport": {
+    "beacon": true,
+    "xhrpost": true,
+    "image": false,
+    "useBody": true
+  }
+}
