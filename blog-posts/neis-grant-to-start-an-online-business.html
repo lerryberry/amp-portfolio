@@ -36,67 +36,19 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 </head>
 <body class="lune lune-overlay-poly">
   <!-- Google Analytics 4 -->
-  <amp-analytics type="googleanalytics" config="https://cheerselliot.com/assets/ga4.json" data-credentials="include">
+  <amp-analytics type="gtag" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
-          "GA4_MEASUREMENT_ID": "G-112VKCGZBV",
-          "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
-          "DEFAULT_PAGEVIEW_ENABLED": true,
-          "GOOGLE_CONSENT_ENABLED": false,
-          "WEBVITALS_TRACKING": false,
-          "PERFORMANCE_TIMING_TRACKING": false,
-          "SEND_DOUBLECLICK_BEACON": false,
-          "DISABLE_REGIONAL_DATA_COLLECTION": false,
-          "ENHANCED_MEASUREMENT_SCROLL": false
-        },
-        "triggers": {
-          "click on #contact trigger": {
-            "on": "click",
-            "selector": "#cta-contact",
-            "request": "ga4Event",
-            "vars": {
-              "ga4_event_name": "cta_clicked"
-            },
-            "extraUrlParams": {
-              "event__str_cta": "contact",
-              "event__str_event_category": "CTAs"
-            }
-          },
-          "scrollPings": {
-            "on": "scroll",
-            "scrollSpec": {
-              "verticalBoundaries": [
-                70
-              ]
-            },
-            "request": "ga4Event",
-            "vars": {
-              "ga4_event_name": "scroll"
-            },
-            "extraUrlParams": {
-              "event__num_percent_scrolled": 70,
-              "event__str_event_category": "engagement"
-            }
-          },
-          "pageTimer": {
-            "on": "timer",
-            "timerSpec": {
-              "interval": 10,
-              "maxTimerLength": 600
-            },
-            "request": "ga4Event",
-            "vars": {
-              "ga4_event_name": "engagement_timer"
-            },
-            "extraUrlParams": {
-              "event__num_seconds": 10,
-              "event__str_event_category": "engagement"
+          "gtag_id": "G-112VKCGZBV",
+          "config": {
+            "G-112VKCGZBV": {
+              "groups": "default"
             }
           }
         }
       }
-        </script>
+    </script>
   </amp-analytics>
 <!-- Start Navbar -->
   <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4 ">
