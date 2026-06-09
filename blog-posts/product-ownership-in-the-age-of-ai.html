@@ -37,15 +37,57 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
 </head>
 <body class="lune lune-overlay-poly">
   <!-- Google Analytics 4 -->
-  <amp-analytics type="gtag" data-credentials="include">
+  <amp-analytics type="googleanalytics" config="https://cheerselliot.com/assets/ga4.json" data-credentials="include">
     <script type="application/json">
       {
         "vars": {
-          "gtag_id": "G-112VKCGZBV",
-          "config": {
-            "G-112VKCGZBV": {
-              "groups": "default",
-              "page_title": "Product ownership in the age of AI"
+          "GA4_MEASUREMENT_ID": "G-X37YHCBTH6",
+          "GA4_ENDPOINT_HOSTNAME": "www.google-analytics.com",
+          "DEFAULT_PAGEVIEW_ENABLED": true,
+          "OVERRIDE_PAGE_TITLE": "Product ownership in the age of AI"
+        },
+        "triggers": {
+          "click on #contact trigger": {
+            "on": "click",
+            "selector": "#cta-contact",
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "cta_clicked"
+            },
+            "extraUrlParams": {
+              "event__str_cta": "contact",
+              "event__str_event_category": "CTAs"
+            }
+          },
+          "scrollPings": {
+            "on": "scroll",
+            "scrollSpec": {
+              "verticalBoundaries": [
+                70
+              ]
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "scroll"
+            },
+            "extraUrlParams": {
+              "event__num_percent_scrolled": 70,
+              "event__str_event_category": "engagement"
+            }
+          },
+          "pageTimer": {
+            "on": "timer",
+            "timerSpec": {
+              "interval": 10,
+              "maxTimerLength": 600
+            },
+            "request": "ga4Event",
+            "vars": {
+              "ga4_event_name": "engagement_timer"
+            },
+            "extraUrlParams": {
+              "event__num_seconds": 10,
+              "event__str_event_category": "engagement"
             }
           }
         }
@@ -191,6 +233,32 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     <p class="mb2">Why do those cognitive tasks need to be done to begin with? Why is this self-driving car going where it is going? Why should we be excited about where we can take this product?</p>
                     <p class="mb2">As AI gets better at answering questions, the value shifts towards deciding which questions are worth asking in the first place.</p>
                     <p class="mb2">Maybe Product Owners become philosophers more than problem solvers. Less focused on execution, and more focused on deciding what is worth doing at all.</p>
+                </div>
+            </div>
+            <div class="lune-title-bottom relative">
+                <h1 class="lune-product-title" aria-label="BLANC">
+                    <amp-img style="width:150px" alt="%%" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1559142612/signature_pzz2z4.webp" layout="responsive" width="357" height="179">
+                        <!-- Fallback when WebP is not supported -->
+                        <amp-img style="width:150px" fallback="" alt="%%" srcset="https://res.cloudinary.com/dwizhptot/image/upload/v1559142612/signature_pzz2z4.png" layout="responsive" width="357" height="179"></amp-img>
+                    </amp-img>
+                    <span class="caps signature h3">Cheers, <br />Elliot...</span>
+                </h1>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
+                    <div class="flex mt2 mb4 justify-center">
+                        <a href="../index#posts">
+                            <button id="cta-contact" class="ampstart-btn ampstart-btn-secondary relative inline-block overflow-hidden caps h7 center lune-theme-light lune-transparent mr2">
+                                <span class="relative block z3">See All Posts</span>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="flex mt2 mb4 justify-center">
+                        <amp-social-share type="twitter"></amp-social-share>
+                        <amp-social-share type="linkedin"></amp-social-share>
+                        <amp-social-share type="email"></amp-social-share>
+                        <amp-social-share type="facebook"></amp-social-share>
+                    </div>
                 </div>
             </div>
         </div>
