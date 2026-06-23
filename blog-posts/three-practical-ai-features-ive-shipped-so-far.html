@@ -120,24 +120,24 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     <p class="mb2">As a product manager, what excites me most isn't automation for automation's sake. It's what the next generation of software products will look like.</p>
                     <p class="mb2">The last software shift that felt truly transformative was the launch of Apple's App Store. Suddenly software wasn't something you only used while sitting at a laptop. It lived in your pocket, connected to the internet, cameras, GPS, touchscreens, microphones, and sensors. Entire categories of businesses appeared almost overnight.</p>
                     <p class="mb2">AI feels similar.</p>
-                </div>
-                <div class="col-blog mr1 ml1">
                     <p class="mb2">Not because every application will become a chatbot, but because software is becoming less prescriptive. Applications can now understand context, generate content, interpret documents, and explain complexity. The interface might not ultimately be chat-based—I still think clicks, visual cues, and good UX will win out—but AI is opening doors that simply weren't available to product teams a few years ago.</p>
                     <p class="mb2">The challenge is separating genuine customer problems from AI hype.</p>
                     <p class="mb2">The three examples below all started the same way:</p>
                     <p class="mb2 italic"><em>Find a real customer problem. Then determine whether AI is the right tool.</em></p>
                 </div>
             </div>
-            <h2 class="h3 caps">
-                <span class="">1. AI Product Description Generation</span>
-            </h2>
-            <div class="flex mb2 content" id="right-image">
+            <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
+                    <p class="mb2 caps bold">1. AI Product Description Generation</p>
                     <p class="mb2">One of the most reliable things AI can do today is work with language.</p>
                     <p class="mb2">My eCommerce platform, CV ecommerce, integrates deeply with ERP systems. Sellers often maintain product information inside their ERP or PIM, which then synchronises into the commerce platform. In reality, those descriptions aren't always suitable for every sales channel.</p>
                     <p class="mb2">We noticed something interesting in our analytics.</p>
                     <p class="mb2">Customers were spending a significant amount of time manually editing product descriptions and SEO metadata directly within our CMS. The data showed a large volume of users actively typing into our WYSIWYG editors rather than relying on synced ERP content. This aligned perfectly with the problem statement behind the project: writing product descriptions and SEO content was consuming a significant amount of seller time.</p>
                     <p class="mb2 italic"><em>This felt like an obvious candidate for AI.</em></p>
+                </div>
+            </div>
+            <div class="flex mb2 content" id="right-image">
+                <div class="col-blog mr1 ml1">
                     <p class="mb2">Rather than creating a separate workflow, we embedded the capability directly into the existing editing experience. A "Generate with AI" action was added alongside the existing content fields, allowing sellers to generate:</p>
                     <ul class="mb2">
                         <li>Product descriptions</li>
@@ -146,6 +146,17 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         <li>Meta descriptions</li>
                     </ul>
                     <p class="mb2">without leaving the page.</p>
+                </div>
+                <div class="col-blog mr1 ml1 blog-img">
+                    <div style="max-width:700px" class="embed mb1">
+                        <amp-img alt="Product Maintenance screen showing Generate with AI controls" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202418/AI_Description_Generator_dgrqgz.jpg" layout="responsive" width="1280" height="663">
+                            <amp-img fallback="" alt="Product Maintenance screen showing Generate with AI controls" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202418/AI_Description_Generator_dgrqgz.jpg" layout="responsive" width="1280" height="663"></amp-img>
+                        </amp-img>
+                    </div>
+                </div>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
                     <p class="mb2">The implementation itself was relatively straightforward. We integrated with OpenAI through a reusable service layer, added configurable prompts, and used existing product information such as titles and descriptions to provide context. Feature flags allowed gradual rollout and usage monitoring while we validated customer adoption.</p>
                     <p class="mb2">The first version wasn't perfect.</p>
                     <p class="mb2">We quickly discovered that model selection mattered. Some cheaper models produced content that felt generic or outdated, while newer models produced stronger results at higher cost. Finding the right balance between quality, recency, and operational cost became part of the product design process rather than purely a technical decision.</p>
@@ -162,26 +173,10 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         <li>Included validation, error handling, telemetry, and usage monitoring from day one to support ongoing optimisation and model evaluation.</li>
                     </ul>
                 </div>
-                <div class="col-blog mr1 ml1 blog-img">
-                    <div style="max-width:700px" class="embed mb1">
-                        <amp-img alt="Product Maintenance screen showing Generate with AI controls" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202418/AI_Description_Generator_dgrqgz.jpg" layout="responsive" width="1280" height="663">
-                            <amp-img fallback="" alt="Product Maintenance screen showing Generate with AI controls" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202418/AI_Description_Generator_dgrqgz.jpg" layout="responsive" width="1280" height="663"></amp-img>
-                        </amp-img>
-                    </div>
-                </div>
             </div>
-            <h2 class="h3 caps">
-                <span class="">2. AI-Powered Code Summaries for Custom Widgets</span>
-            </h2>
             <div class="flex mb2 content">
-                <div class="col-blog mr1 ml1 blog-img">
-                    <div style="max-width:700px" class="embed mb1">
-                        <amp-img alt="Widget Notes screen with Generate Summary button" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202039/AI_Code_Explainer.png" layout="responsive" width="1099" height="1230">
-                            <amp-img fallback="" alt="Widget Notes screen with Generate Summary button" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202039/AI_Code_Explainer.png" layout="responsive" width="1099" height="1230"></amp-img>
-                        </amp-img>
-                    </div>
-                </div>
                 <div class="col-blog mr1 ml1">
+                    <p class="mb2 caps bold">2. AI-Powered Code Summaries for Custom Widgets</p>
                     <p class="mb2">The second feature reused much of the same infrastructure but solved an entirely different problem.</p>
                     <p class="mb2">Our platform allows customers and implementation teams to create custom scripts and widgets that execute server-side.</p>
                     <p class="mb2">This flexibility is incredibly powerful.</p>
@@ -195,6 +190,17 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     <p class="mb2">Neither option was ideal.</p>
                     <p class="mb2">The user story was simple:</p>
                     <blockquote class="mb2 italic">"As a staff member, I want to be able to easily understand what custom-written code is doing, so that I can more quickly troubleshoot errors and support customer configurations."</blockquote>
+                </div>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1 blog-img">
+                    <div style="max-width:700px" class="embed mb1">
+                        <amp-img alt="Widget Notes screen with Generate Summary button" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202039/AI_Code_Explainer.png" layout="responsive" width="1099" height="1230">
+                            <amp-img fallback="" alt="Widget Notes screen with Generate Summary button" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202039/AI_Code_Explainer.png" layout="responsive" width="1099" height="1230"></amp-img>
+                        </amp-img>
+                    </div>
+                </div>
+                <div class="col-blog mr1 ml1">
                     <p class="mb2">Since we already had an AI integration layer in place, we pointed it at this problem.</p>
                     <p class="mb2">A new <em>Generate Summary</em> action was added to custom scripts and widgets. When triggered, the platform sends the code to OpenAI along with tailored prompts and generates a concise explanation of the code's purpose and behaviour. The generated explanation is then inserted directly into the existing Notes area.</p>
                     <p class="mb2">The most interesting outcome wasn't the summary itself.</p>
@@ -202,6 +208,10 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     <p class="mb2">Because summaries were generated into the Notes field, support teams were encouraged to review, improve, and save them. Over time this creates lightweight documentation that benefits the next person who encounters the same customisation.</p>
                     <p class="mb2">Instead of repeatedly asking AI to explain the same widget, knowledge begins accumulating inside the product itself.</p>
                     <p class="mb2">That makes every future support interaction faster.</p>
+                </div>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
                     <p class="mb2 caps bold">Technical Notes</p>
                     <ul class="mb2">
                         <li>Reused the existing OpenAI integration and AI service layer originally built for content generation.</li>
@@ -212,11 +222,9 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     </ul>
                 </div>
             </div>
-            <h2 class="h3 caps">
-                <span class="">3. Automatic Document Mapping in Lucy</span>
-            </h2>
-            <div class="flex mb2 content" id="right-image">
+            <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
+                    <p class="mb2 caps bold">3. Automatic Document Mapping in Lucy</p>
                     <p class="mb2">The third example is probably the most technically interesting.</p>
                     <p class="mb2">Lucy is an automation platform that processes purchase orders and integrates them into ERP systems.</p>
                     <p class="mb2">Before a seller can begin processing orders from a new trading partner, Lucy needs to understand the layout of that partner's purchase order documents.</p>
@@ -237,10 +245,25 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                     <p class="mb2">Our first instinct was to use Azure Document Intelligence to fully extract purchase order data.</p>
                     <p class="mb2">The challenge was cost.</p>
                     <p class="mb2">At scale, some customers process hundreds of purchase orders every day. Running expensive document extraction workflows on every document wasn't commercially attractive.</p>
+                </div>
+            </div>
+            <div class="flex mb2 content" id="right-image">
+                <div class="col-blog mr1 ml1">
                     <p class="mb2">Instead, we looked for a more targeted approach.</p>
                     <p class="mb2">The breakthrough was using AI only when Lucy couldn't find an existing document map.</p>
                     <p class="mb2">Rather than processing every purchase order, Azure Document Intelligence is invoked only during the document mapping workflow when no suitable map exists. This dramatically reduces processing volume and cost.</p>
                     <p class="mb2">The system analyses the PDF, identifies key fields, converts the coordinates into Lucy's mapping system, and generates suggested mappings for review. Users can then accept, adjust, or reject the suggestions.</p>
+                </div>
+                <div class="col-blog mr1 ml1 blog-img">
+                    <div style="max-width:700px" class="embed mb1">
+                        <amp-img alt="Lucy Automatic Mapping interface" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202418/AI_Document_Mapping_z9jhnp.jpg" layout="responsive" width="1280" height="637">
+                            <amp-img fallback="" alt="Lucy Automatic Mapping interface" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202418/AI_Document_Mapping_z9jhnp.jpg" layout="responsive" width="1280" height="637"></amp-img>
+                        </amp-img>
+                    </div>
+                </div>
+            </div>
+            <div class="flex mb2 content">
+                <div class="col-blog mr1 ml1">
                     <p class="mb2">What I like about this solution is that it combines AI with human validation.</p>
                     <p class="mb2">AI handles the repetitive, low-value work.</p>
                     <p class="mb2">The user remains in control of the final mapping.</p>
@@ -258,27 +281,16 @@ html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-t
                         <li>Controlled through frontend and backend feature flags for staged rollout, testing, performance monitoring, and safe iteration.</li>
                     </ul>
                 </div>
-                <div class="col-blog mr1 ml1 blog-img">
-                    <div style="max-width:700px" class="embed mb1">
-                        <amp-img alt="Lucy Automatic Mapping interface" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto,f_webp/v1782202418/AI_Document_Mapping_z9jhnp.jpg" layout="responsive" width="1280" height="637">
-                            <amp-img fallback="" alt="Lucy Automatic Mapping interface" srcset="https://res.cloudinary.com/dwizhptot/image/upload/c_scale,w_700,q_auto/v1782202418/AI_Document_Mapping_z9jhnp.jpg" layout="responsive" width="1280" height="637"></amp-img>
-                        </amp-img>
-                    </div>
-                </div>
             </div>
-            <h2 class="h3 caps">
-                <span class="">What I've Learned So Far</span>
-            </h2>
             <div class="flex mb2 content">
                 <div class="col-blog mr1 ml1">
+                    <p class="mb2 caps bold">What I've Learned So Far</p>
                     <p class="mb2">The most successful AI features I've shipped haven't started with AI.</p>
                     <p class="mb2">They started with frustration.</p>
                     <p class="mb2">Writing product descriptions is frustrating.</p>
                     <p class="mb2">Understanding undocumented custom code is frustrating.</p>
                     <p class="mb2">Manually mapping documents is frustrating.</p>
                     <p class="mb2">AI happened to be a good solution to each of those problems.</p>
-                </div>
-                <div class="col-blog mr1 ml1">
                     <p class="mb2">The lesson for product teams is simple:</p>
                     <p class="mb2">Don't start by asking "Where can we use AI?"</p>
                     <p class="mb2">Start by asking:</p>
