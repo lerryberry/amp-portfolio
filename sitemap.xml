@@ -4,57 +4,95 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://cheerselliot.com/</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2026-05-31T09:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/elliots-talent-timeline-as-tech-product-and-marketing-manager</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2026-05-31T09:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/product-ownership-in-the-age-of-ai</loc>
+  <lastmod>2026-05-31T09:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/the-ai-revolution-as-scared-as-i-am-thrilled</loc>
+  <lastmod>2025-10-22T14:15:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/three-practical-ai-features-ive-shipped-so-far</loc>
+  <lastmod>2025-05-15T09:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/from-service-led-to-product-led-lessons-from-building-software-in-australia</loc>
+  <lastmod>2024-03-15T09:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/driving-product-discovery-with-user-research-interviews</loc>
+  <lastmod>2021-12-01T14:15:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/gaining-paying-customers-with-a-killer-go-to-market-strategy</loc>
+  <lastmod>2021-11-17T14:15:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/uncovering-key-product-flaws-through-metrics</loc>
+  <lastmod>2020-10-15T14:15:33+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cheerselliot.com/blog-posts/perfecting-communication-with-clear-and-concise-jira-tickets</loc>
+  <lastmod>2021-02-03T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/my-awesome-professional-portfolio-with-amp-html</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2019-05-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/launching-an-mvp-in-less-than-2-weeks</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2018-05-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/ui-updates-that-slashed-support-tickets-by-20-percent</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2018-03-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/guest-checkout-functionality-and-compare-campaign-that-boosted-business</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2017-11-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/case-study-event-marketing-lead-nurturing-to-generate-new-business</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2017-06-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://cheerselliot.com/blog-posts/how-i-generated-200-free-leads-per-month-with-content-marketing</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <loc>https://cheerselliot.com/blog-posts/how-I-generated-200-free-leads-per-month-with-content-marketing</loc>
+  <lastmod>2017-04-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://cheerselliot.com/blog-posts/how-i-landed-20k-sponsorship-for-my-business</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <loc>https://cheerselliot.com/blog-posts/how-I-landed-20k-sponsorship-for-my-business</loc>
+  <lastmod>2014-02-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://cheerselliot.com/blog-posts/neis-grant-to-start-an-online-business</loc>
-  <lastmod>2020-01-18T22:54:43+00:00</lastmod>
+  <lastmod>2013-06-24T14:15:33+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -67,6 +105,5 @@
   <lastmod>2020-01-18T22:54:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-
 
 </urlset>
